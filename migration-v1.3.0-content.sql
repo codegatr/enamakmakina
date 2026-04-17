@@ -290,3 +290,104 @@ UPDATE sayfalar SET icerik = '<h2>Enamak Makina: Yerli Mühendislik Odaklı Kuml
 UPDATE ayarlar SET deger = 'Enamak Makina - Yerli mühendislik odaklı kumlama makinesi imalatı. Askılı, tamburlu, basınçlı, tünel tipi. Konya merkez, Türkiye geneli servis.' WHERE anahtar = 'site_aciklama';
 UPDATE ayarlar SET deger = 'Enamak Makina | Endüstriyel Kumlama Makineleri' WHERE anahtar = 'site_baslik';
 UPDATE ayarlar SET deger = 'Kumlama Teknolojileri' WHERE anahtar = 'slogan';
+
+-- =====================================================================
+-- SSS (Sıkça Sorulan Sorular) - 18 adet, 4 kategori
+-- =====================================================================
+DELETE FROM sss WHERE id > 0;
+
+INSERT INTO sss (kategori, soru, cevap, sira, aktif) VALUES
+
+-- Kategori: Ürünler & Teknik
+('Ürünler & Teknik',
+ 'Hangi tip kumlama makinası benim için uygun?',
+ 'Seçim 3 faktöre bağlıdır: (1) Parça boyutu ve ağırlığı, (2) Günlük üretim adediniz, (3) Parça geometrisi. Küçük döküm parçalar ve cıvata için lastik tamburlu (LT serisi), 50kg+ ve karmaşık geometriler için askılı (AK serisi), hassas/küçük işler için basınçlı kabin (BK serisi) tercih edilir. Sac/profil için tünel tipi (TK veya SPK), boru için BRK serisi uygundur. Projenize uygun model seçimi için mühendislik ekibimiz ücretsiz analiz yapar.',
+ 1, 1),
+
+('Ürünler & Teknik',
+ 'Makineleriniz hangi Sa standardına uygun sonuç verir?',
+ 'Standart konfigürasyonumuzda ISO 8501-1''e göre Sa 2.5 (çok kapsamlı temizlik) sonucu garanti edilir. Bu, endüstriyel boya sistemlerinin büyük çoğunluğunun zorunlu ön koşuludur. Sa 3 (tam temizlik, beyaz metal) talep ediliyorsa türbin sayısı artırılarak veya aşındırıcı tipi değiştirilerek karşılanır.',
+ 2, 1),
+
+('Ürünler & Teknik',
+ 'Makineler yerli üretim mi, ithal mi?',
+ 'Tüm makinelerimiz Konya merkezli tesisimizde yerli mühendislik ile imal edilir. Ana komponentler (kabin, türbin muhafazası, filtre sistemi) %100 yerli üretimdir. Motor, PLC ve bazı standart aksesuarlar ihtiyaç duyulduğunda AB standardındaki markalardan (Siemens, Mitsubishi, SEW-Eurodrive) tedarik edilir. Bu sayede satış sonrası yedek parça stoğumuz sorunsuz çalışır.',
+ 3, 1),
+
+('Ürünler & Teknik',
+ 'Kabin içi astar malzemesi nedir?',
+ 'Kabin içi astarlar manganlı çelik (Mn13 veya eşdeğeri) malzemeden imal edilir. Bu, aşınmaya karşı en dirençli çelik türlerinden biridir. Her teslimatta astar malzemesinin kimyasal analiz sertifikası müşteriye sunulur. Standart sac astar KULLANILMAZ — düşük maliyet için standart sac öneren tekliflere dikkat edin.',
+ 4, 1),
+
+('Ürünler & Teknik',
+ 'Hangi aşındırıcı (çelik bilye, grit, garnet) kullanmalıyım?',
+ 'Doğru aşındırıcı seçimi makineye ve parçaya bağlıdır: Askılı kumlama için çelik bilye (steel shot) veya çelik grit; tamburlu için YALNIZCA küresel çelik bilye (köşeli grit tamburu delip deşik eder); hassas yüzeyler için cam boncuk; dekoratif kumlama için garnet; restorasyon için silisyum karbür kullanılır. Eğitim programlarımızda detaylı aşındırıcı seçim kriterleri öğretilir.',
+ 5, 1),
+
+-- Kategori: Garanti & Servis
+('Garanti & Servis',
+ 'Garanti süresi ne kadar?',
+ 'Tüm makinelerimize 2 yıl üretici garantisi verilir. Bu sürede işçilik veya malzeme kaynaklı tüm arızalar ücretsiz karşılanır. Garanti süresi uzatma paketi ile 5 yıla çıkarılabilir. Sarf malzemeler (türbin kanatları, astarlar, filtreler) garanti dışıdır ancak depomuzda sürekli stok bulunur.',
+ 1, 1),
+
+('Garanti & Servis',
+ 'Arıza durumunda ne kadar sürede servis gelir?',
+ 'Saha servisi taleplerinde yanıt süremiz: Türkiye içi 24-48 saat, Konya ve çevre iller aynı gün. WhatsApp veya telefon ile ilk tanı ortalama 15 dakikada yapılır. Uzak masaüstü ile PLC arızalarına anında müdahale edilebilir. 7/24 teknik destek hattımız açıktır.',
+ 2, 1),
+
+('Garanti & Servis',
+ 'Başka marka kumlama makineme bakım verir misiniz?',
+ 'Evet, marka bağımsız servis veriyoruz. Endümak, Abana Makina, Strong Makine, SATMAK, Saygılı, Sedmak, Tolermak ve ithal markalar için periyodik bakım, onarım ve modernizasyon yapıyoruz. Yedek parça tedariği için yerli stoğumuz ve uluslararası ağımız kullanılır.',
+ 3, 1),
+
+('Garanti & Servis',
+ 'Bakım anlaşması yapıyor musunuz?',
+ '3 seviye bakım paketi sunuyoruz: (1) Altın — 3 ayda bir tam kontrol + sarf malzeme dahil, (2) Standart — 6 ayda bir bakım ziyareti, (3) Temel — yılda 1 ziyaret. Bakım anlaşmanız olan müşterilere acil arıza durumlarında öncelik tanınır.',
+ 4, 1),
+
+('Garanti & Servis',
+ 'Yedek parça tedarik süresi ne kadar?',
+ 'Kritik yedek parçalar (türbin kanatları, manganlı astar, filtre kartuşları, O-ring seti, elevatör kepçeleri) depomuzda stokta. Kargo sonrası 24-48 saat içinde sahanızdadır. Özel sipariş parçalar (örn. yabancı marka özel komponent) 7-14 iş günü içinde temin edilir.',
+ 5, 1),
+
+-- Kategori: Satın Alma & Teklif
+('Satın Alma & Teklif',
+ 'Teklif nasıl alabilirim?',
+ 'İletişim sayfasındaki teklif formunu doldurabilir, info@enamakmakina.com adresine e-posta atabilir veya +90 542 510 36 16 numarasını arayabilirsiniz. Teklifimizde astar malzemesi, türbin motor gücü, filtre sınıfı ve garanti kapsamı açıkça belirtilir. Şeffaflık prensiptir.',
+ 1, 1),
+
+('Satın Alma & Teklif',
+ 'Teslim süresi ne kadar?',
+ 'Standart modeller (AK-100, LT-100, BK-60 gibi) için 30-45 gün, orta seri (AK-200, TK-600, SPK-1500) için 45-60 gün, özel projelerde (büyük tünel, özel tasarım) 60-120 gün teslim süresi geçerlidir. Üretim planımız siparişle başlar, her hafta müşteriye ilerleme raporu verilir.',
+ 2, 1),
+
+('Satın Alma & Teklif',
+ 'Ödeme koşullarınız neler?',
+ 'Standart ödeme planı: %40 sipariş onayı, %40 üretim ortasında (mekanik montaj tamamlandığında), %20 devreye alma sonrası. Leasing ve banka kredisi seçenekleri için bankalarımızla anlaşmalarımız mevcuttur. Kurumsal müşteriler için özel ödeme planı değerlendirilebilir.',
+ 3, 1),
+
+('Satın Alma & Teklif',
+ 'Teslimattan önce makineyi test edebilir miyim?',
+ 'Evet, her makine teslim öncesi fabrikamızda tam yük altında FAT (Fabrika Kabul Testi) yapılır. Müşterilerimiz isterse teste bizzat katılabilir. FAT raporu teslim evrakları ile birlikte sunulur. İsteğe bağlı olarak test videosu da kaydedilir.',
+ 4, 1),
+
+-- Kategori: Kurulum & Eğitim
+('Kurulum & Eğitim',
+ 'Makinenin kurulumu dahil mi?',
+ 'Evet. Tüm makinelerimizde nakliye, montaj, kalibrasyon ve devreye alma bedele dahildir. Kurulum öncesi teknik ekibimiz sahayı ziyaret eder, enerji/hava/drenaj altyapısını kontrol eder. Kurulum süresi makine boyutuna göre 1-5 gün arasındadır.',
+ 1, 1),
+
+('Kurulum & Eğitim',
+ 'Operatör eğitimi veriyor musunuz?',
+ 'Her teslimat sonrası 2-3 gün operatör eğitimi verilir. Eğitim içeriği: ISO 8501-1 standartları, aşındırıcı seçim kriterleri, kabin içi astar kontrolü, türbin kanat aşınma analizi, filtre bakım rutini, iş güvenliği. Eğitim kitapçığı ve video materyaller de sağlanır.',
+ 2, 1),
+
+('Kurulum & Eğitim',
+ 'Kurulum için hangi altyapı hazır olmalı?',
+ 'Genel gereksinimler: (1) Uygun zemin (beton, makinenin ağırlığını taşıyacak kalınlıkta), (2) Elektrik tesisatı (380V trifaze), (3) Hava hattı (basınçlı kabin için 7 bar), (4) Toz tahliye bağlantısı veya filtre alanı. Sahada inceleme yaptığımızda eksiklikleri yazılı olarak raporlarız.',
+ 3, 1),
+
+('Kurulum & Eğitim',
+ 'Modernizasyon hizmeti sunuyor musunuz?',
+ 'Eski makineyi atmak yerine modernize etmek çoğu zaman %60-70 tasarruf sağlar. Hizmetlerimiz: PLC güncellemesi (eski röle mantık yerine Siemens/Mitsubishi PLC), türbin yenileme, kartuş filtre dönüşümü, HMI dokunmatik ekran entegrasyonu, uzaktan izleme sistemi. Her modernizasyon projesi için öncelikle saha incelemesi ve fizibilite raporu hazırlanır.',
+ 4, 1);

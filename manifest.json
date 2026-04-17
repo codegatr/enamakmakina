@@ -1,7 +1,7 @@
 {
-    "version": "1.3.5",
+    "version": "1.3.6",
     "date": "2026-04-17",
-    "notes": "v1.3.5 Migration schema fix - urunler ve slider INSERT kolonlari gercek DB schema'ya uyarlandi. model -> model_kodu, ozellikler -> teknik_ozellikler, buton_yazi -> buton_metin.",
+    "notes": "v1.3.6 - SSS sayfasi bastan yeniden tasarlandi (hero, arama kutusu, kategori sekmeleri, modern accordion kart, ayri iletisim CTA bloku) + migration'a 18 gercek SSS icerigi (Urunler-Teknik, Garanti-Servis, Satin Alma, Kurulum-Egitim kategorileri).",
     "files": [
         "index.php",
         "urunler.php",
