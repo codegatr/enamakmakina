@@ -4249,17 +4249,31 @@ select.form-control {
     margin: 0 0 32px;
     font-weight: 500;
 }
-.hizmet-icerik h3 {
+.hizmet-icerik h2 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--c-text);
-    margin: 32px 0 14px;
-    letter-spacing: -0.01em;
-    padding-bottom: 8px;
+    margin: 40px 0 16px;
+    letter-spacing: -0.015em;
+    padding-bottom: 10px;
     border-bottom: 2px solid var(--c-border);
 }
+.hizmet-icerik h2:first-child { margin-top: 0; }
+.hizmet-icerik h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 28px 0 12px;
+    letter-spacing: -0.01em;
+}
 .hizmet-icerik h3:first-child { margin-top: 0; }
+.hizmet-icerik p {
+    margin: 0 0 14px;
+    line-height: 1.75;
+    color: var(--c-text-2);
+}
 .hizmet-icerik ul,
 .hizmet-icerik ol {
     margin: 14px 0 24px;
@@ -4272,6 +4286,10 @@ select.form-control {
     padding-left: 4px;
 }
 .hizmet-icerik li strong {
+    color: var(--c-text);
+    font-weight: 600;
+}
+.hizmet-icerik p strong {
     color: var(--c-text);
     font-weight: 600;
 }

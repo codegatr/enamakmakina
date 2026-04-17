@@ -1,7 +1,7 @@
 {
     "version": "1.4.5",
     "date": "2026-04-17",
-    "notes": "v1.4.5 Hizmet detay sayfalari toparlandi - 6 hizmet icin tutarli icerik formati (lead + 3 h3 bolum: Kapsamimiz/Surec/Avantajlari). Her hizmete ozel 6 yeni zengin SVG illustrasyonu (muhendislik:blueprint+3D kup+pergel, bakim:dev disli+anahtar, devreye-alma:forklift+kaci+checklist, yedek-parca:stok rafi+turbin+filtre, egitim:canli sunum+sertifika+kitap, destek:7/24 saat+headset+phone). hizmet.php 2-kolon hero layout (sol metin+sag gorsel), CSS'e 115 satir hizmet detay stili. Icerik 462-641 karakter aralikli/tutarsiz -> 1231-1545 karakter standardize. Karisik h3/ul/ol/strong -> 3 h3, her biri tematik. 6 hizmet toplam 8423 karakter kaliteli icerik.",
+    "notes": "v1.4.5 Hizmet detay sayfalari zenginlestirildi ve gorsel eklendi. 6 hizmetin iceriği tutarli yapiya kavustu (Neden? + Kapsam + Surec + Guvence). Slider 2 ve 3'teki eski zengin metinler ilgili hizmetlere entegre edildi (Muhendislik, 7/24 Destek). 6 hizmete ilgi alanina uygun gorsel: Muhendislik ve 7/24 Destek ChatGPT fotografi, 4 hizmete yeni profesyonel SVG illustrasyon (bakim-onarim, devreye-alma, yedek-parca, egitim). SVG'ler: site paletinde, 800x500, endustriyel temalar (turbin, kabin, anahtar/tornavida, egitim panosu).",
     "files": [
         ".htaccess",
         "404.php",
@@ -98,7 +98,9 @@
         "yonetim/urunler.php",
         "uploads/slider/slider-servis.jpg",
         "uploads/slider/slider-muhendislik.jpg",
-        "uploads/hakkimizda/sistem-bilesenleri.jpg"
+        "uploads/hakkimizda/sistem-bilesenleri.jpg",
+        "uploads/hizmetler/muhendislik.jpg",
+        "uploads/hizmetler/teknik-destek.jpg"
     ],
     "migrations": [
         "migration-v1.3.0-content.sql"
