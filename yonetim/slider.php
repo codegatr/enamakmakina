@@ -12,6 +12,52 @@ if ($islem === 'sil' && $id && csrf_dogrula($_GET['t'] ?? '')) {
     header('Location: slider.php?s=1'); exit;
 }
 
+// Varsayılan slider kayıtlarını yükle (sadece slider tablosuna dokunur)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['varsayilan_yukle']) && csrf_dogrula($_POST['csrf_token'] ?? '')) {
+    $defaults = [
+        [
+            'ust_baslik' => 'Yerli Mühendislik, Yüksek Kalite',
+            'baslik'     => 'Endüstriyel Kumlama Sistemleri',
+            'aciklama'   => 'Askılı, tamburlu, basınçlı ve tünel tipi kumlama makineleri. Projeye özel tasarım, fabrika kabul testi ve sahada devreye alma.',
+            'gorsel'     => 'uploads/slider/slider-1.svg',
+            'buton_metin'=> 'Ürünlerimizi İnceleyin',
+            'buton_link' => 'urunler.php',
+            'sadece_gorsel' => 0,
+            'sira' => 1,
+        ],
+        [
+            'ust_baslik' => 'Duran Üretim Hattı Beklemez',
+            'baslik'     => '7/24 Teknik Servis ve Yedek Parça',
+            'aciklama'   => 'Yerli yedek parça stoğumuz ve saha servis ekibimiz ile 24-48 saat içinde fabrikanızdayız. Marka bağımsız bakım-onarım.',
+            'gorsel'     => 'uploads/slider/slider-servis.jpg',
+            'buton_metin'=> 'Servis Talep Et',
+            'buton_link' => 'hizmetler.php',
+            'sadece_gorsel' => 1,
+            'sira' => 2,
+        ],
+        [
+            'ust_baslik' => 'Standart Makine Değil, Doğru Makine',
+            'baslik'     => 'Projeye Özel Mühendislik',
+            'aciklama'   => 'Parça tipi ve üretim kapasitenize göre sıfırdan tasarlanan kumlama çözümleri. 3D CAD, mühendislik hesapları ve FAT dahil.',
+            'gorsel'     => 'uploads/slider/slider-muhendislik.jpg',
+            'buton_metin'=> 'Teklif Al',
+            'buton_link' => 'teklif-al.php',
+            'sadece_gorsel' => 1,
+            'sira' => 3,
+        ],
+    ];
+    $eklendi = 0;
+    $stmt = $pdo->prepare("INSERT INTO slider (ust_baslik, baslik, aciklama, gorsel, buton_metin, buton_link, sadece_gorsel, sira, aktif) VALUES (?,?,?,?,?,?,?,?,1)");
+    foreach ($defaults as $d) {
+        try {
+            $stmt->execute([$d['ust_baslik'], $d['baslik'], $d['aciklama'], $d['gorsel'], $d['buton_metin'], $d['buton_link'], $d['sadece_gorsel'], $d['sira']]);
+            $eklendi++;
+        } catch (Exception $e) {}
+    }
+    denetim_kaydet('slider_varsayilan_yuklendi', 'slider');
+    header('Location: slider.php?v=' . $eklendi); exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($islem === 'ekle' || $islem === 'duzenle')) {
     if (!csrf_dogrula($_POST['csrf_token'] ?? '')) {
         $hata = 'Güvenlik doğrulaması başarısız.';
@@ -57,6 +103,7 @@ include 'header.php';
 ?>
 <?php if (!empty($_GET['b'])): ?><div class="alert alert-success">Kaydedildi.</div><?php endif; ?>
 <?php if (!empty($_GET['s'])): ?><div class="alert alert-success">Silindi.</div><?php endif; ?>
+<?php if (isset($_GET['v'])): ?><div class="alert alert-success"><?= (int)$_GET['v'] ?> varsayılan slider kaydı yüklendi.</div><?php endif; ?>
 <?php if ($hata): ?><div class="alert alert-danger"><?= e($hata) ?></div><?php endif; ?>
 
 <?php if ($islem === 'ekle' || $islem === 'duzenle'): ?>
@@ -92,7 +139,19 @@ include 'header.php';
 ?>
 <div class="page-head">
     <h2>Slider (<?= count($liste) ?>)</h2>
-    <a href="slider.php?islem=ekle" class="btn btn-primary">+ Yeni Slayt</a>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <?php if (count($liste) === 0): ?>
+            <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (Endüstriyel Kumlama, 7/24 Servis, Projeye Özel Mühendislik) eklenecek. Devam edilsin mi?');">
+                <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
+                <input type="hidden" name="varsayilan_yukle" value="1">
+                <button class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5V19M5 12H19"/></svg>
+                    Varsayılan Sliderları Yükle
+                </button>
+            </form>
+        <?php endif; ?>
+        <a href="slider.php?islem=ekle" class="btn btn-primary">+ Yeni Slayt</a>
+    </div>
 </div>
 <div class="data-card">
     <?php if ($liste): ?>
@@ -120,7 +179,19 @@ include 'header.php';
     </table>
     </div>
     <?php else: ?>
-        <div class="empty-state"><h3>Slayt yok</h3><br><a href="slider.php?islem=ekle" class="btn btn-primary">+ Ekle</a></div>
+        <div class="empty-state" style="padding: 60px 20px; text-align:center;">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5" style="margin-bottom:12px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15L16 10L5 21"/></svg>
+            <h3 style="color:var(--text); margin-bottom:6px;">Slider kaydı yok</h3>
+            <p style="color:var(--text-3); margin-bottom:20px;">Yeni slayt ekleyebilir veya hazır 3 varsayılan slider ile başlayabilirsiniz.</p>
+            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (Endüstriyel Kumlama, 7/24 Servis, Projeye Özel Mühendislik) eklenecek. Devam edilsin mi?');">
+                    <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
+                    <input type="hidden" name="varsayilan_yukle" value="1">
+                    <button class="btn btn-primary">Varsayılan Sliderları Yükle (3 adet)</button>
+                </form>
+                <a href="slider.php?islem=ekle" class="btn btn-outline">+ Kendim Ekle</a>
+            </div>
+        </div>
     <?php endif; ?>
 </div>
 <?php endif; ?>

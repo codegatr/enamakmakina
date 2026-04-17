@@ -1,7 +1,7 @@
 {
-    "version": "1.4.5",
+    "version": "1.4.6",
     "date": "2026-04-17",
-    "notes": "v1.4.5 Hizmet detay sayfalari zenginlestirildi ve gorsel eklendi. 6 hizmetin iceriği tutarli yapiya kavustu (Neden? + Kapsam + Surec + Guvence). Slider 2 ve 3'teki eski zengin metinler ilgili hizmetlere entegre edildi (Muhendislik, 7/24 Destek). 6 hizmete ilgi alanina uygun gorsel: Muhendislik ve 7/24 Destek ChatGPT fotografi, 4 hizmete yeni profesyonel SVG illustrasyon (bakim-onarim, devreye-alma, yedek-parca, egitim). SVG'ler: site paletinde, 800x500, endustriyel temalar (turbin, kabin, anahtar/tornavida, egitim panosu).",
+    "notes": "v1.4.6 Slider yonetiminde 'Varsayilan Sliderlari Yukle' butonu - 3 hazir slider kaydini tek tiklama ile geri yuklemek icin (Endustriyel Kumlama + 7/24 Servis + Projeye Ozel Muhendislik). Slider silindikten sonra empty state'te buyuk 'Yukle' butonu ve icon gorulur. Mevcut kayitlar varken de header'da kucuk versiyonu vardir (ama sadece liste bostayken).",
     "files": [
         ".htaccess",
         "404.php",
