@@ -22,7 +22,9 @@ Options -Indexes
     Deny from all
 </FilesMatch>
 
-<FilesMatch "(config\.php|functions\.php|header\.php|footer\.php|install\.php|update\.php|kurulum\.sql|\.sql|\.log|\.md|composer\.(json|lock))$">
+# Hassas dosyalara dışarıdan erişimi engelle
+# (update.php LISTEDE DEĞİL - admin panelden POST ile çağrılıyor)
+<FilesMatch "(config\.php|functions\.php|header\.php|footer\.php|install\.php|kurulum\.sql|\.sql|\.log|\.md|composer\.(json|lock))$">
     Order allow,deny
     Deny from all
 </FilesMatch>
