@@ -1,7 +1,7 @@
 {
-    "version": "1.2.1",
+    "version": "1.3.0",
     "date": "2026-04-17",
-    "notes": "v1.2.1 hotfix - Header ve footer inline SVG logolari turuncu hardcoded kalmisti, mavi gradient'e guncellendi. theme-color meta tag mavi markaya uyarlandi.",
+    "notes": "v1.3.0 - BUYUK SURUM: Urunler sayfasi yeniden tasarlandi (filter pills + geniş kart grid). Hakkimizda kurumsal layout (timeline, misyon-vizyon, neden biz, CEO quote). 8 kategori + 14 urun + 7 hizmet + 3 slider + 8 referans gercek icerik ile dolduruldu. 30 mühendislik çizim tarzı SVG gorsel eklendi.",
     "files": [
         "index.php",
         "urunler.php",
@@ -56,7 +56,40 @@
         "assets/img/favicon.svg",
         "assets/img/og-image.svg",
         "assets/img/placeholder.svg",
-        "favicon.ico"
+        "favicon.ico",
+        "uploads/slider/slider-1.svg",
+        "uploads/slider/slider-2.svg",
+        "uploads/slider/slider-3.svg",
+        "uploads/kategoriler/askili-kumlama.svg",
+        "uploads/kategoriler/basincli-kumlama.svg",
+        "uploads/kategoriler/boru-kumlama.svg",
+        "uploads/kategoriler/sac-profil-kumlama.svg",
+        "uploads/kategoriler/seyyar-kumlama.svg",
+        "uploads/kategoriler/tamburlu-kumlama.svg",
+        "uploads/kategoriler/tunel-tipi-kumlama.svg",
+        "uploads/kategoriler/vakumlu-kumlama.svg",
+        "uploads/urunler/askili-ak-100.svg",
+        "uploads/urunler/askili-ak-200.svg",
+        "uploads/urunler/basincli-bk-120.svg",
+        "uploads/urunler/basincli-bk-60.svg",
+        "uploads/urunler/boru-brk-400.svg",
+        "uploads/urunler/sac-profil-spk-1500.svg",
+        "uploads/urunler/seyyar-sk-50.svg",
+        "uploads/urunler/tamburlu-lt-100.svg",
+        "uploads/urunler/tamburlu-lt-300.svg",
+        "uploads/urunler/tunel-tk-1200.svg",
+        "uploads/urunler/tunel-tk-600.svg",
+        "uploads/urunler/vakumlu-vk-80.svg",
+        "uploads/hizmetler/bakim-onarim.svg",
+        "uploads/hizmetler/devreye-alma.svg",
+        "uploads/hizmetler/egitim.svg",
+        "uploads/hizmetler/modernizasyon.svg",
+        "uploads/hizmetler/muhendislik.svg",
+        "uploads/hizmetler/teknik-destek.svg",
+        "uploads/hizmetler/yedek-parca.svg",
+        "migration-v1.3.0-content.sql"
     ],
-    "migrations": []
+    "migrations": [
+        "migration-v1.3.0-content.sql"
+    ]
 }
