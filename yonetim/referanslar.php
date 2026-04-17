@@ -101,7 +101,7 @@ include 'header.php';
         <?php foreach ($liste as $r): ?>
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($r['logo'] ?: '/assets/img/placeholder-logo.svg')) ?>" alt="" style="object-fit:contain; background:#fff; padding:3px;"></td>
-                <td><strong style="color:#fff;"><?= e($r['firma_adi']) ?></strong></td>
+                <td><strong style="color:var(--text);"><?= e($r['firma_adi']) ?></strong></td>
                 <td><?= e($r['sektor'] ?: '—') ?></td>
                 <td><?php if ($r['website']): ?><a href="<?= e($r['website']) ?>" target="_blank" style="color:var(--text-2);"><?= e($r['website']) ?></a><?php endif; ?></td>
                 <td><?= (int)$r['sira'] ?></td>

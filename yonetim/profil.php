@@ -63,7 +63,7 @@ include 'header.php';
     <div style="display:flex; align-items:center; gap:20px; margin-bottom:24px;">
         <span class="avatar" style="width:70px; height:70px; font-size:28px;"><?= e(mb_substr($benim['ad_soyad'] ?: $benim['kullanici_adi'], 0, 1)) ?></span>
         <div>
-            <h3 style="color:#fff; font-size:18px;"><?= e($benim['ad_soyad'] ?: $benim['kullanici_adi']) ?></h3>
+            <h3 style="color:var(--text); font-size:18px;"><?= e($benim['ad_soyad'] ?: $benim['kullanici_adi']) ?></h3>
             <p style="color:var(--text-2); font-size:13px;">@<?= e($benim['kullanici_adi']) ?> · <?= e($benim['rol']) ?></p>
         </div>
     </div>
@@ -71,11 +71,11 @@ include 'header.php';
     <form method="post">
         <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
 
-        <h3 style="color:#fff; font-size:15px; margin-bottom:14px;">Bilgilerim</h3>
+        <h3 style="color:var(--text); font-size:15px; margin-bottom:14px;">Bilgilerim</h3>
         <div class="form-group"><label>Ad Soyad</label><input type="text" name="ad_soyad" class="form-control" value="<?= e($benim['ad_soyad']) ?>"></div>
         <div class="form-group"><label>E-Posta</label><input type="email" name="email" class="form-control" required value="<?= e($benim['email']) ?>"></div>
 
-        <h3 style="color:#fff; font-size:15px; margin:24px 0 14px;">Şifre Değiştir</h3>
+        <h3 style="color:var(--text); font-size:15px; margin:24px 0 14px;">Şifre Değiştir</h3>
         <p style="color:var(--text-3); font-size:13px; margin-bottom:14px;">Şifrenizi değiştirmek istemiyorsanız, boş bırakın.</p>
         <div class="form-group"><label>Mevcut Şifre</label><input type="password" name="eski_sifre" class="form-control" autocomplete="off"></div>
         <div class="form-grid-2">

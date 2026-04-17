@@ -83,7 +83,7 @@ include 'header.php';
         <tbody>
         <?php foreach ($liste as $s): ?>
             <tr>
-                <td><strong style="color:#fff;"><?= e($s['soru']) ?></strong><br><small style="color:var(--text-3);"><?= e(kisalt(strip_tags($s['cevap']), 100)) ?></small></td>
+                <td><strong style="color:var(--text);"><?= e($s['soru']) ?></strong><br><small style="color:var(--text-3);"><?= e(kisalt(strip_tags($s['cevap']), 100)) ?></small></td>
                 <td><span class="tag tag-blue"><?= e($s['kategori']) ?></span></td>
                 <td><?= (int)$s['sira'] ?></td>
                 <td><span class="tag <?= $s['aktif'] ? 'tag-green' : 'tag-red' ?>"><?= $s['aktif'] ? 'Aktif' : 'Pasif' ?></span></td>

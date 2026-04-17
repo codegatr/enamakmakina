@@ -124,7 +124,7 @@ include 'header.php';
             <div style="position:relative; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--bg);">
                 <img src="<?= e(resim_url($g['gorsel'])) ?>" style="width:100%; height:150px; object-fit:cover; display:block;">
                 <div style="padding:8px 10px; font-size:12px;">
-                    <?php if ($g['baslik']): ?><div style="color:#fff; font-weight:600;"><?= e(kisalt($g['baslik'], 30)) ?></div><?php endif; ?>
+                    <?php if ($g['baslik']): ?><div style="color:var(--text); font-weight:600;"><?= e(kisalt($g['baslik'], 30)) ?></div><?php endif; ?>
                     <?php if ($g['kategori']): ?><small style="color:var(--text-3);"><?= e($g['kategori']) ?></small><?php endif; ?>
                 </div>
                 <div style="display:flex; gap:4px; padding:0 10px 10px;">

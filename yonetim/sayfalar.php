@@ -86,7 +86,7 @@ include 'header.php';
         <tbody>
         <?php foreach ($liste as $s): ?>
             <tr>
-                <td><strong style="color:#fff;"><?= e($s['baslik']) ?></strong></td>
+                <td><strong style="color:var(--text);"><?= e($s['baslik']) ?></strong></td>
                 <td><code style="background:var(--bg); padding:2px 6px; border-radius:4px; font-size:11px;"><?= e($s['slug']) ?></code></td>
                 <td><span class="tag <?= $s['aktif'] ? 'tag-green' : 'tag-red' ?>"><?= $s['aktif'] ? 'Aktif' : 'Pasif' ?></span></td>
                 <td class="actions-cell">

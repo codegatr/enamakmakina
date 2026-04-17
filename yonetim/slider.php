@@ -104,7 +104,7 @@ include 'header.php';
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($s['gorsel'])) ?>" alt=""></td>
                 <td>
-                    <strong style="color:#fff;"><?= e($s['baslik']) ?></strong>
+                    <strong style="color:var(--text);"><?= e($s['baslik']) ?></strong>
                     <?php if ($s['ust_baslik']): ?><br><small style="color:var(--text-3);"><?= e($s['ust_baslik']) ?></small><?php endif; ?>
                 </td>
                 <td><?php if ($s['buton_metin']): ?><?= e($s['buton_metin']) ?> → <?= e($s['buton_link']) ?><?php endif; ?></td>

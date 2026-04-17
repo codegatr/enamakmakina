@@ -282,7 +282,7 @@ include 'header.php';
 
 <?php if (!empty($log)): ?>
     <div class="data-card" style="padding:18px; margin-bottom:20px;">
-        <h3 style="color:#fff; margin-bottom:10px; font-size:14px;">İşlem Kaydı</h3>
+        <h3 style="color:var(--text); margin-bottom:10px; font-size:14px;">İşlem Kaydı</h3>
         <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px; font-family:monospace; font-size:12px; max-height:300px; overflow-y:auto;">
             <?php foreach ($log as $e): ?>
                 <div style="color:var(--text-2); padding:2px 0;">
@@ -295,68 +295,91 @@ include 'header.php';
 
 <div class="form-grid" style="gap:20px;">
     <div>
-        <div class="data-card" style="padding:20px;">
-            <h3 style="color:#fff; margin-bottom:14px;">Sürüm Bilgisi</h3>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:16px; background:var(--bg); border-radius:8px; margin-bottom:12px;">
-                <div>
-                    <div style="color:var(--text-2); font-size:12px;">Mevcut Sürüm</div>
-                    <div style="color:#fff; font-size:24px; font-weight:700;">v<?= e($mevcut_surum) ?></div>
-                </div>
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M22 11.08V12A10 10 0 1 1 16.91 2.84"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="data-card" style="padding:0;">
+            <div class="data-card-head" style="padding:16px 20px;">
+                <h3 style="margin:0; font-size:15px; font-weight:700;">Sürüm Bilgisi</h3>
             </div>
-
-            <?php if (isset($_GET['kontrol'])): ?>
-                <?php if (!$release_info): ?>
-                    <div class="alert alert-danger">GitHub sunucusuna ulaşılamadı. İnternet bağlantınızı veya token'ınızı kontrol edin.</div>
-                <?php elseif ($son_surum && version_compare($son_surum, $mevcut_surum, '>')): ?>
-                    <div class="alert alert-warn" style="display:block;">
-                        <strong>🎉 Yeni sürüm mevcut: v<?= e($son_surum) ?></strong>
-                        <?php if (!empty($release_info['body'])): ?>
-                            <div style="margin-top:10px; font-size:13px; white-space:pre-wrap;"><?= e($release_info['body']) ?></div>
-                        <?php endif; ?>
-                        <br>
-                        <form method="post" action="guncelleme.php" style="display:inline-block; margin-top:10px;">
-                            <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
-                            <input type="hidden" name="islem" value="guncelle">
-                            <input type="hidden" name="surum" value="<?= e($son_surum) ?>">
-                            <button class="btn btn-primary" onclick="return confirm('Güncellemeyi başlatmak istediğinize emin misiniz? Yedekleme otomatik yapılacaktır.');">Güncellemeyi Başlat</button>
-                        </form>
+            <div style="padding:20px;">
+                <!-- Mevcut sürüm kutusu -->
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; background:linear-gradient(135deg, var(--primary-tint) 0%, #e0e7ff 100%); border:1px solid #c7d2fe; border-radius:var(--radius); margin-bottom:14px;">
+                    <div>
+                        <div style="color:var(--text-2); font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px;">Mevcut Sürüm</div>
+                        <div style="color:var(--primary); font-size:28px; font-weight:800; font-family:var(--font-display); letter-spacing:-0.02em;">v<?= e($mevcut_surum) ?></div>
                     </div>
-                <?php else: ?>
-                    <div class="alert alert-success">✓ Site en güncel sürümde (v<?= e($mevcut_surum) ?>)</div>
-                <?php endif; ?>
-            <?php else: ?>
-                <p style="color:var(--text-2); font-size:13px;">Yeni güncellemeleri kontrol etmek için yukarıdaki butonu kullanın.</p>
-            <?php endif; ?>
+                    <div style="width:48px; height:48px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                </div>
 
-            <h4 style="margin-top:24px; color:#fff; font-size:14px;">Repo Bilgileri</h4>
-            <table style="width:100%; margin-top:10px;">
-                <tr><td style="padding:6px 0; color:var(--text-2); font-size:13px;">GitHub Repo:</td><td style="color:#fff;"><?= e(GITHUB_REPO) ?></td></tr>
-                <tr><td style="padding:6px 0; color:var(--text-2); font-size:13px;">Token:</td><td><?= defined('GITHUB_TOKEN') && GITHUB_TOKEN ? '<span class="tag tag-green">Yapılandırıldı</span>' : '<span class="tag tag-red">Yok</span>' ?></td></tr>
-                <tr><td style="padding:6px 0; color:var(--text-2); font-size:13px;">PHP Sürümü:</td><td style="color:#fff;"><?= PHP_VERSION ?></td></tr>
-            </table>
+                <?php if (isset($_GET['kontrol'])): ?>
+                    <?php if (!$release_info): ?>
+                        <div class="alert alert-danger">GitHub sunucusuna ulaşılamadı. İnternet bağlantınızı veya token'ınızı kontrol edin.</div>
+                    <?php elseif ($son_surum && version_compare($son_surum, $mevcut_surum, '>')): ?>
+                        <div class="alert alert-warn" style="display:block;">
+                            <strong>🎉 Yeni sürüm mevcut: v<?= e($son_surum) ?></strong>
+                            <?php if (!empty($release_info['body'])): ?>
+                                <div style="margin-top:10px; font-size:13px; white-space:pre-wrap;"><?= e($release_info['body']) ?></div>
+                            <?php endif; ?>
+                            <br>
+                            <form method="post" action="guncelleme.php" style="display:inline-block; margin-top:10px;">
+                                <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
+                                <input type="hidden" name="islem" value="guncelle">
+                                <input type="hidden" name="surum" value="<?= e($son_surum) ?>">
+                                <button class="btn btn-primary" onclick="return confirm('Güncellemeyi başlatmak istediğinize emin misiniz? Yedekleme otomatik yapılacaktır.');">Güncellemeyi Başlat</button>
+                            </form>
+                        </div>
+                    <?php else: ?>
+                        <div class="alert alert-success">✓ Site en güncel sürümde (v<?= e($mevcut_surum) ?>)</div>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <p style="color:var(--text-2); font-size:13px; padding:8px 0;">Yeni güncellemeleri kontrol etmek için üstteki <strong>Güncelleme Ara</strong> butonunu kullanın.</p>
+                <?php endif; ?>
+
+                <!-- Repo bilgileri -->
+                <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
+                    <h4 style="color:var(--text); font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:12px;">Repo Bilgileri</h4>
+                    <div style="display:grid; grid-template-columns:auto 1fr; gap:10px 16px; align-items:center;">
+                        <span style="color:var(--text-2); font-size:13px; font-weight:500;">GitHub Repo:</span>
+                        <code style="color:var(--text); font-size:13px; background:var(--bg-3); padding:4px 8px; border-radius:4px; font-family:ui-monospace, monospace; justify-self:start;"><?= e(GITHUB_REPO) ?></code>
+
+                        <span style="color:var(--text-2); font-size:13px; font-weight:500;">Token:</span>
+                        <div><?= defined('GITHUB_TOKEN') && GITHUB_TOKEN ? '<span class="tag tag-green">✓ Yapılandırıldı</span>' : '<span class="tag tag-red">✗ Yok</span>' ?></div>
+
+                        <span style="color:var(--text-2); font-size:13px; font-weight:500;">PHP Sürümü:</span>
+                        <code style="color:var(--text); font-size:13px; background:var(--bg-3); padding:4px 8px; border-radius:4px; font-family:ui-monospace, monospace; justify-self:start;"><?= PHP_VERSION ?></code>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div>
-        <div class="data-card" style="padding:20px;">
-            <h3 style="color:#fff; margin-bottom:14px;">Güncelleme Geçmişi</h3>
+        <div class="data-card" style="padding:0;">
+            <div class="data-card-head" style="padding:16px 20px;">
+                <h3 style="margin:0; font-size:15px; font-weight:700;">Güncelleme Geçmişi</h3>
+                <?php if ($gecmis): ?><span class="tag tag-gray"><?= count($gecmis) ?> kayıt</span><?php endif; ?>
+            </div>
+            <div style="padding:20px; max-height:600px; overflow-y:auto;">
             <?php if ($gecmis): ?>
-                <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="display:flex; flex-direction:column; gap:12px;">
                     <?php foreach ($gecmis as $g): ?>
-                        <div style="padding:12px; background:var(--bg); border-radius:8px; border-left:3px solid var(--primary);">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <strong style="color:#fff;">v<?= e($g['surum']) ?></strong>
-                                <small style="color:var(--text-3);"><?= tr_tarih($g['tarih'], true) ?></small>
+                        <?php $durum_renk = $g['durum']==='basarili' ? 'var(--success)' : 'var(--danger)'; ?>
+                        <div style="padding:14px; background:var(--bg-3); border-radius:var(--radius); border-left:3px solid <?= $durum_renk ?>;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+                                <strong style="color:var(--text); font-family:var(--font-display); font-size:14px;">v<?= e($g['surum']) ?></strong>
+                                <small style="color:var(--text-3); font-size:11px;"><?= tr_tarih($g['tarih'], true) ?></small>
                             </div>
-                            <?php if ($g['notlar']): ?><div style="color:var(--text-2); font-size:12px; margin-top:4px; white-space:pre-wrap;"><?= e(kisalt($g['notlar'], 200)) ?></div><?php endif; ?>
-                            <span class="tag tag-<?= $g['durum']==='basarili'?'green':'red' ?>" style="margin-top:6px;"><?= strtoupper(e($g['durum'])) ?></span>
+                            <?php if ($g['notlar']): ?>
+                                <div style="color:var(--text-2); font-size:12px; line-height:1.5; margin-top:4px;"><?= e(kisalt(preg_replace('/[#*`]/', '', strip_tags($g['notlar'])), 180)) ?></div>
+                            <?php endif; ?>
+                            <span class="tag tag-<?= $g['durum']==='basarili'?'green':'red' ?>" style="margin-top:8px; font-size:10px;"><?= strtoupper(e($g['durum'])) ?></span>
                         </div>
                     <?php endforeach; ?>
                 </div>
             <?php else: ?>
-                <p style="color:var(--text-3); font-size:13px;">Henüz güncelleme yapılmadı.</p>
+                <p style="color:var(--text-3); font-size:13px; text-align:center; padding:20px;">Henüz güncelleme yapılmadı.</p>
             <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

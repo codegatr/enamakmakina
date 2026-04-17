@@ -82,7 +82,7 @@ include 'header.php';
                 <textarea name="aciklama" class="form-control" rows="10"><?= e($veri['aciklama']) ?></textarea></div>
             <div class="form-group"><label>SVG İkon (opsiyonel, HTML)</label>
                 <textarea name="ikon" class="form-control" rows="3" placeholder='<svg>...</svg>'><?= e($veri['ikon']) ?></textarea></div>
-            <h3 style="margin:20px 0 12px; color:#fff;">SEO</h3>
+            <h3 style="margin:20px 0 12px; color:var(--text);">SEO</h3>
             <div class="form-group"><label>Meta Başlık</label>
                 <input type="text" name="meta_baslik" class="form-control" value="<?= e($veri['meta_baslik']) ?>"></div>
             <div class="form-group"><label>Meta Açıklama</label>
@@ -115,7 +115,7 @@ include 'header.php';
         <?php foreach ($liste as $h): ?>
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($h['gorsel'])) ?>" alt=""></td>
-                <td><strong style="color:#fff;"><?= e($h['ad']) ?></strong></td>
+                <td><strong style="color:var(--text);"><?= e($h['ad']) ?></strong></td>
                 <td><code style="background:var(--bg); padding:2px 6px; border-radius:4px; font-size:11px;"><?= e($h['slug']) ?></code></td>
                 <td><?= (int)$h['sira'] ?></td>
                 <td><span class="tag <?= $h['aktif'] ? 'tag-green' : 'tag-red' ?>"><?= $h['aktif'] ? 'Aktif' : 'Pasif' ?></span></td>

@@ -131,7 +131,7 @@ include 'header.php';
             <?php foreach ($kategoriler as $k): ?>
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($k['gorsel'])) ?>" alt=""></td>
-                <td><strong style="color:#fff;"><?= e($k['ad']) ?></strong></td>
+                <td><strong style="color:var(--text);"><?= e($k['ad']) ?></strong></td>
                 <td><code style="background:var(--bg); padding:2px 6px; border-radius:4px; font-size:11px; color:var(--text-2);"><?= e($k['slug']) ?></code></td>
                 <td><?= (int)$k['urun_sayisi'] ?></td>
                 <td><?= (int)$k['sira'] ?></td>

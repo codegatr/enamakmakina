@@ -40,7 +40,7 @@ if ($id && $islem === 'liste') {
         <?php if (!empty($_GET['b'])): ?><div class="alert alert-success" style="margin-bottom:20px;">Durum güncellendi.</div><?php endif; ?>
         <div style="display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;">
             <div style="flex:1; min-width:280px;">
-                <h3 style="color:#fff; font-size:20px;"><?= e($t['ad_soyad']) ?></h3>
+                <h3 style="color:var(--text); font-size:20px;"><?= e($t['ad_soyad']) ?></h3>
                 <?php if ($t['firma']): ?><p style="color:var(--text-2);"><?= e($t['firma']) ?></p><?php endif; ?>
                 <p style="color:var(--text-2); margin-top:6px;">✉ <?= e($t['email']) ?></p>
                 <p style="color:var(--text-2);">📞 <?= e($t['telefon']) ?></p>
@@ -62,7 +62,7 @@ if ($id && $islem === 'liste') {
         </div>
 
         <?php if ($t['mesaj']): ?>
-            <h4 style="margin-top:20px; color:#fff;">Mesaj</h4>
+            <h4 style="margin-top:20px; color:var(--text);">Mesaj</h4>
             <div style="background:var(--bg); padding:16px; border-radius:8px; border:1px solid var(--border); white-space:pre-wrap; color:var(--text); line-height:1.7; margin-top:8px;">
 <?= e($t['mesaj']) ?>
             </div>
@@ -129,7 +129,7 @@ include 'header.php';
         <?php foreach ($liste as $t): ?>
             <tr style="cursor:pointer;" onclick="window.location='teklifler.php?id=<?= (int)$t['id'] ?>'">
                 <td>
-                    <strong style="color:#fff;"><?= e($t['ad_soyad']) ?></strong>
+                    <strong style="color:var(--text);"><?= e($t['ad_soyad']) ?></strong>
                     <?php if ($t['firma']): ?><br><small style="color:var(--text-3);"><?= e($t['firma']) ?></small><?php endif; ?>
                     <br><small style="color:var(--text-3);"><?= e($t['email']) ?></small>
                 </td>

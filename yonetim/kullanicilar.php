@@ -116,7 +116,7 @@ include 'header.php';
                     <div style="display:flex; align-items:center; gap:10px;">
                         <span class="avatar"><?= e(mb_substr($y['ad_soyad'] ?: $y['kullanici_adi'], 0, 1)) ?></span>
                         <div>
-                            <strong style="color:#fff;"><?= e($y['ad_soyad'] ?: $y['kullanici_adi']) ?></strong>
+                            <strong style="color:var(--text);"><?= e($y['ad_soyad'] ?: $y['kullanici_adi']) ?></strong>
                             <?php if ($y['id'] == $_SESSION['admin_id']): ?><span class="tag tag-blue">Siz</span><?php endif; ?>
                             <br><small style="color:var(--text-3);">@<?= e($y['kullanici_adi']) ?></small>
                         </div>

@@ -43,7 +43,7 @@ if ($id && $islem === 'liste') {
     <div class="form-card">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; gap:20px; flex-wrap:wrap;">
             <div>
-                <h2 style="color:#fff; margin-bottom:4px;"><?= e($m['ad_soyad']) ?></h2>
+                <h2 style="color:var(--text); margin-bottom:4px;"><?= e($m['ad_soyad']) ?></h2>
                 <p style="color:var(--text-2);"><?= e($m['email']) ?></p>
                 <?php if ($m['telefon']): ?><p style="color:var(--text-2);">📞 <?= e($m['telefon']) ?></p><?php endif; ?>
             </div>
@@ -54,7 +54,7 @@ if ($id && $islem === 'liste') {
         </div>
 
         <?php if ($m['konu']): ?>
-            <h3 style="color:#fff; margin-bottom:10px;"><?= e($m['konu']) ?></h3>
+            <h3 style="color:var(--text); margin-bottom:10px;"><?= e($m['konu']) ?></h3>
         <?php endif; ?>
 
         <div style="background:var(--bg); padding:18px; border-radius:8px; border:1px solid var(--border); white-space:pre-wrap; color:var(--text); line-height:1.7;">
@@ -125,7 +125,7 @@ include 'header.php';
         <?php foreach ($liste as $m): ?>
             <tr style="cursor:pointer;" onclick="window.location='mesajlar.php?id=<?= (int)$m['id'] ?>'">
                 <td>
-                    <strong style="color:#fff;"><?= e($m['ad_soyad']) ?></strong>
+                    <strong style="color:var(--text);"><?= e($m['ad_soyad']) ?></strong>
                     <br><small style="color:var(--text-3);"><?= e($m['email']) ?></small>
                 </td>
                 <td>

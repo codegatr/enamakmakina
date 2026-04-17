@@ -177,7 +177,7 @@ include 'header.php';
                 <small style="color:var(--text-3); font-size:12px;">Her satır için: [{"etiket":"...","deger":"..."}] formatında yazın.</small>
             </div>
 
-            <h3 style="margin:20px 0 12px; color:#fff; font-size:15px;">SEO Ayarları</h3>
+            <h3 style="margin:20px 0 12px; color:var(--text); font-size:15px;">SEO Ayarları</h3>
             <div class="form-group">
                 <label>Meta Başlık</label>
                 <input type="text" name="meta_baslik" class="form-control" value="<?= e($urun['meta_baslik']) ?>">
@@ -304,7 +304,7 @@ include 'header.php';
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($u['gorsel'])) ?>" alt=""></td>
                 <td>
-                    <strong style="color:#fff;"><?= e($u['ad']) ?></strong>
+                    <strong style="color:var(--text);"><?= e($u['ad']) ?></strong>
                     <?php if ($u['one_cikan']): ?><span class="tag tag-orange">Öne Çıkan</span><?php endif; ?>
                     <?php if ($u['model_kodu']): ?><br><small style="color:var(--text-3);"><?= e($u['model_kodu']) ?></small><?php endif; ?>
                 </td>

@@ -82,7 +82,7 @@ include 'header.php';
             </div>
             <div class="form-group"><label>Özet</label><textarea name="ozet" class="form-control" rows="3"><?= e($veri['ozet']) ?></textarea></div>
             <div class="form-group"><label>İçerik (HTML)</label><textarea name="icerik" class="form-control" rows="15"><?= e($veri['icerik']) ?></textarea></div>
-            <h3 style="margin:20px 0 12px; color:#fff; font-size:15px;">SEO</h3>
+            <h3 style="margin:20px 0 12px; color:var(--text); font-size:15px;">SEO</h3>
             <div class="form-group"><label>Meta Başlık</label><input type="text" name="meta_baslik" class="form-control" value="<?= e($veri['meta_baslik']) ?>"></div>
             <div class="form-group"><label>Meta Açıklama</label><textarea name="meta_aciklama" class="form-control" rows="2"><?= e($veri['meta_aciklama']) ?></textarea></div>
         </div>
@@ -130,7 +130,7 @@ include 'header.php';
         <?php foreach ($liste as $b): ?>
             <tr>
                 <td><img class="thumb" src="<?= e(resim_url($b['gorsel'])) ?>" alt=""></td>
-                <td><strong style="color:#fff;"><?= e($b['baslik']) ?></strong><br><small style="color:var(--text-3);"><?= e($b['yazar']) ?></small></td>
+                <td><strong style="color:var(--text);"><?= e($b['baslik']) ?></strong><br><small style="color:var(--text-3);"><?= e($b['yazar']) ?></small></td>
                 <td><?= e($b['kategori'] ?: '—') ?></td>
                 <td><?= tr_tarih($b['yayin_tarihi']) ?></td>
                 <td><span class="tag <?= $b['aktif'] ? 'tag-green' : 'tag-red' ?>"><?= $b['aktif'] ? 'Yayında' : 'Taslak' ?></span></td>
