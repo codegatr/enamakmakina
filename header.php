@@ -55,30 +55,96 @@ $gsc = ayar('google_search_console');
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Stylesheets -->
 <link rel="stylesheet" href="<?= e(SITE_URL) ?>/assets/css/style.css?v=<?= e(ayar('versiyon', '1.0.0')) ?>">
 
-<!-- Schema.org -->
+<!-- Schema.org LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
+  "@id": "<?= e(SITE_URL) ?>/#organization",
   "name": "<?= e(ayar('firma_adi', 'Enamak Makina')) ?>",
   "legalName": "<?= e(ayar('firma_unvan')) ?>",
   "url": "<?= e(SITE_URL) ?>",
-  "logo": "<?= e(resim_url(ayar('logo'))) ?>",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "<?= e(resim_url(ayar('logo', 'assets/img/logo.svg'))) ?>",
+    "width": 1200,
+    "height": 320
+  },
+  "image": "<?= e(resim_url('assets/img/og-image.svg')) ?>",
   "description": "<?= e($sayfa_aciklama) ?>",
   "telephone": "<?= e(ayar('telefon')) ?>",
   "email": "<?= e(ayar('email')) ?>",
+  "priceRange": "$$-$$$",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "TR",
+    "addressLocality": "Konya",
+    "addressRegion": "Konya",
     "streetAddress": "<?= e(ayar('adres')) ?>"
-  }
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.8715",
+    "longitude": "32.4846"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "08:30",
+    "closes": "18:30"
+  }],
+  "sameAs": [
+    <?php
+    $social = array_filter([ayar('facebook'), ayar('instagram'), ayar('linkedin'), ayar('youtube'), ayar('twitter')]);
+    echo implode(",\n    ", array_map(function($u){ return '"' . addslashes($u) . '"'; }, $social));
+    ?>
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Türkiye"
+  },
+  "knowsAbout": ["Kumlama Makineleri", "Askılı Kumlama", "Tamburlu Kumlama", "Basınçlı Kumlama", "Tünel Tipi Kumlama", "Yüzey Hazırlık", "Sandblasting Machines"]
 }
 </script>
+
+<?php if (!empty($breadcrumb) && count($breadcrumb) > 1): ?>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    <?php
+    $items = [];
+    foreach ($breadcrumb as $i => $bc) {
+        $url = SITE_URL;
+        if (!empty($bc[1])) $url .= '/' . ltrim($bc[1], '/');
+        elseif ($i === count($breadcrumb) - 1) $url = $canonical;
+        $items[] = sprintf(
+            '{"@type":"ListItem","position":%d,"name":"%s","item":"%s"}',
+            $i + 1,
+            addslashes($bc[0]),
+            addslashes($url)
+        );
+    }
+    echo implode(",\n    ", $items);
+    ?>
+  ]
+}
+</script>
+<?php endif; ?>
+
+<?php if (!empty($schema_ek)): ?>
+<!-- Sayfaya özel schema (Product, Article vb) -->
+<script type="application/ld+json">
+<?= $schema_ek ?>
+</script>
+<?php endif; ?>
 
 <?php if (!empty($ga)): ?>
 <!-- Google Analytics -->

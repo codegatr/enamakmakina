@@ -66,6 +66,38 @@ if (!empty($urun['kategori_ad'])) {
 }
 $breadcrumb[] = [$urun['ad'], ''];
 
+// Product schema (SEO - Rich Snippet)
+$schema_ek = json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Product',
+    'name' => $urun['ad'],
+    'description' => $urun['kisa_aciklama'] ?: kisalt(strip_tags($urun['aciklama']), 300),
+    'image' => resim_url($urun['gorsel']),
+    'sku' => $urun['model_kodu'] ?: $urun['slug'],
+    'mpn' => $urun['model_kodu'] ?: '',
+    'brand' => [
+        '@type' => 'Brand',
+        'name' => 'ENA-MAK'
+    ],
+    'manufacturer' => [
+        '@type' => 'Organization',
+        'name' => ayar('firma_adi', 'Enamak Makina'),
+        'url' => SITE_URL
+    ],
+    'category' => $urun['kategori_ad'] ?? 'Kumlama Makineleri',
+    'offers' => [
+        '@type' => 'Offer',
+        'priceCurrency' => 'TRY',
+        'availability' => 'https://schema.org/InStock',
+        'priceValidUntil' => date('Y-12-31'),
+        'url' => SITE_URL . '/urun.php?slug=' . $urun['slug'],
+        'seller' => [
+            '@type' => 'Organization',
+            'name' => ayar('firma_adi', 'Enamak Makina')
+        ]
+    ]
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+
 include 'header.php';
 ?>
 

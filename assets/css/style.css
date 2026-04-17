@@ -3242,3 +3242,221 @@ select.form-control {
 .site-header .container {
     gap: 16px;
 }
+
+/* =========================================================
+   39. MOBİL İYİLEŞTİRMELER (v1.3.7) - kapsamlı
+========================================================= */
+
+/* Touch target minimum 44x44 (Apple/Google erişilebilirlik kuralı) */
+@media (max-width: 900px) {
+    .btn,
+    .btn-sm,
+    .filter-pill,
+    .sss-tab,
+    .nav-link,
+    .header-phone,
+    button[type="submit"],
+    button[type="button"] {
+        min-height: 44px;
+    }
+
+    /* Küçük butonlar da okunabilir olsun */
+    .btn-sm {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* Form alanları touch-friendly */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    input[type="password"],
+    select,
+    textarea {
+        min-height: 44px;
+        font-size: 16px !important; /* iOS zoom önleme */
+        padding: 12px 14px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    /* Link underline mesafesi (mobilde okumayı kolaylaştırır) */
+    p a, li a {
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+    }
+}
+
+/* Ekran 560px altı - çok küçük telefon */
+@media (max-width: 560px) {
+    .container, .container-narrow {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Hero başlıklar küçülsün */
+    h1, .page-title, .corp-hero-title, .sss-hero-title {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        line-height: 1.15;
+    }
+
+    /* Section padding azalsın */
+    .section {
+        padding: 40px 0;
+    }
+    .section-top-tight {
+        padding-top: 24px;
+    }
+
+    /* Stats gridini tek kolon yap */
+    .stats-grid, .corp-hero-card {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1px !important;
+    }
+    .stat-card, .corp-stat-big {
+        padding: 20px 14px !important;
+    }
+    .stat-num, .corp-stat-num {
+        font-size: 28px !important;
+    }
+
+    /* Footer grid responsive */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    /* Kart padding azalt */
+    .mv-card, .reason-card, .timeline-item, .urun-card-v2-body {
+        padding: 20px !important;
+    }
+
+    /* Slider texts */
+    .slide-title {
+        font-size: 1.6rem !important;
+    }
+    .slide-desc {
+        font-size: 0.95rem !important;
+    }
+
+    /* Filter pills */
+    .filter-pills,
+    .sss-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        flex-wrap: nowrap;
+    }
+
+    /* Breadcrumb daha kompakt */
+    .breadcrumb {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* Quote card mobil */
+    .quote-card {
+        padding: 28px 22px;
+    }
+    .quote-card blockquote {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
+    /* Sticky bar'lar mobilde static olsun */
+    .urun-filter-bar,
+    .sss-tabs-wrap {
+        position: static !important;
+    }
+
+    /* Mobile menu'de modal tarzı overlay */
+    .mobile-menu a {
+        padding: 14px 20px;
+        font-size: 16px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Blog card */
+    .blog-card img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+}
+
+/* Tablet portrait 600-900 */
+@media (min-width: 561px) and (max-width: 900px) {
+    .urun-grid-v2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .reason-grid,
+    .mv-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* iOS safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-menu {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .site-header {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* Tablolar mobilde horizontal scroll */
+@media (max-width: 720px) {
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    table.full-wide {
+        white-space: normal;
+    }
+
+    /* Images genelde fluid olsun */
+    img:not([width]) {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Reduced motion — erişilebilirlik */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print stiller (faturalar, ürün sayfası yazdırma) */
+@media print {
+    .site-header, .footer, .mobile-menu, .whatsapp-fab,
+    .urun-filter-bar, .sss-tabs-wrap, .cta-section {
+        display: none !important;
+    }
+    body {
+        background: #fff;
+        color: #000;
+    }
+    .container, .container-narrow {
+        max-width: 100%;
+    }
+}

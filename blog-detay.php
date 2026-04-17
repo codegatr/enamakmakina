@@ -29,6 +29,35 @@ $breadcrumb = [
     [$blog['baslik'], ''],
 ];
 
+// Article schema (SEO - Rich Snippet for news/blog)
+$schema_ek = json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Article',
+    'headline' => $blog['baslik'],
+    'description' => kisalt(strip_tags($blog['ozet'] ?: $blog['icerik']), 300),
+    'image' => [resim_url($blog['gorsel'])],
+    'datePublished' => $blog['yayin_tarihi'] ?? $blog['olusturma_tarihi'] ?? date('c'),
+    'dateModified' => $blog['guncelleme_tarihi'] ?? $blog['yayin_tarihi'] ?? date('c'),
+    'author' => [
+        '@type' => 'Person',
+        'name' => $blog['yazar'] ?: ayar('firma_adi', 'Enamak Makina')
+    ],
+    'publisher' => [
+        '@type' => 'Organization',
+        'name' => ayar('firma_adi', 'Enamak Makina'),
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => resim_url(ayar('logo', 'assets/img/logo.svg'))
+        ]
+    ],
+    'mainEntityOfPage' => [
+        '@type' => 'WebPage',
+        '@id' => SITE_URL . '/blog-detay.php?slug=' . $blog['slug']
+    ],
+    'articleSection' => $blog['kategori'] ?? 'Haberler',
+    'inLanguage' => 'tr-TR'
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+
 include 'header.php';
 ?>
 
