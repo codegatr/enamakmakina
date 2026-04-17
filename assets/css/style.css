@@ -3748,51 +3748,34 @@ select.form-control {
     color: var(--c-text-2);
     line-height: 1.65;
     max-width: 780px;
-    margin: 0 0 32px;
-}
-.hizmet-hero-stats {
-    display: flex;
-    gap: 48px;
-    padding-top: 28px;
-    border-top: 1px solid var(--c-border);
-    flex-wrap: wrap;
-}
-.hh-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-.hh-stat strong {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    font-weight: 900;
-    color: var(--c-primary);
-    letter-spacing: -0.02em;
-    line-height: 1;
-}
-.hh-stat span {
-    font-size: 13px;
-    color: var(--c-text-2);
-    margin-top: 4px;
+    margin: 0 0 28px;
 }
 
-/* Hizmet kart numaralandırma */
-.hizmet-card { position: relative; }
-.hizmet-card-num {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    font-family: var(--font-display);
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--c-bg-soft);
-    letter-spacing: -0.04em;
-    line-height: 1;
-    z-index: 0;
-    transition: color .2s;
+/* Hero chip satırı — 3 stat yerine sade info pill'leri */
+.hizmet-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 24px;
+    border-top: 1px solid var(--c-border);
 }
-.hizmet-card:hover .hizmet-card-num {
-    color: var(--c-primary-tint);
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-full);
+    font-size: 13.5px;
+    color: var(--c-text-2);
+    line-height: 1.3;
+}
+.chip strong {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--c-primary);
+    letter-spacing: -0.01em;
 }
 
 /* Süreç grid */
@@ -3858,61 +3841,15 @@ select.form-control {
     margin: 0;
 }
 
-/* Hizmet avantaj grid */
-.hizmet-avantaj-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-.hizmet-avantaj {
-    padding: 24px;
-    background: #fff;
-    border: 1px solid var(--c-border);
-    border-radius: var(--r-lg);
-    transition: all .2s;
-}
-.hizmet-avantaj:hover {
-    border-color: var(--c-primary);
-    box-shadow: 0 6px 16px rgba(30, 64, 175, 0.06);
-}
-.hizmet-avantaj svg {
-    color: var(--c-primary);
-    margin-bottom: 12px;
-}
-.hizmet-avantaj h4 {
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--c-text);
-    margin: 0 0 6px;
-    letter-spacing: -0.01em;
-}
-.hizmet-avantaj p {
-    font-size: 13.5px;
-    color: var(--c-text-2);
-    line-height: 1.55;
-    margin: 0;
-}
-
 /* Hizmet responsive */
 @media (max-width: 960px) {
-    .surec-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .surec-grid { grid-template-columns: repeat(2, 1fr); }
     .surec-grid::before { display: none; }
-    .hizmet-avantaj-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .hizmet-hero-stats { gap: 28px; }
+    .hizmet-hero-chips { gap: 8px; }
+    .chip { font-size: 13px; padding: 7px 12px; }
 }
 @media (max-width: 560px) {
-    .surec-grid {
-        grid-template-columns: 1fr;
-    }
-    .hizmet-avantaj-grid {
-        grid-template-columns: 1fr;
-    }
-    .hizmet-card-num { font-size: 32px; top: 14px; right: 14px; }
+    .surec-grid { grid-template-columns: 1fr; }
 }
 
 /* =========================================================

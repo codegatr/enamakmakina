@@ -1,7 +1,7 @@
 {
-    "version": "1.4.3",
+    "version": "1.4.4",
     "date": "2026-04-17",
-    "notes": "v1.4.3 Icerik-yukle migration runner idempotent dusmesi - v1.4.2'de guncelleme.php'deki migration runner duzeltilmisti ama yonetim/icerik-yukle.php'deki ikinci bir runner atlanmisti. Ayni idempotent hata tolerans mantigi bu dosyaya da uygulandi (42S21/42S01/23000/42000 + duplicate pattern'leri 'atlandi' olarak ayrilir). UI'ye atlanan statement sayisi + aciklama metni eklendi, log'da sari renkli ℹ ile ayri gosterim.",
+    "notes": "v1.4.4 Hizmetler sayfasi toparlandi - 'Neden Enamak' bolumu kaldirildi (hakkimizda'da zaten vardi - tekrar). Hero'daki 3 buyuk stat kutusu -> 3 kucuk chip pill'e donustu. Hizmet kartlarindaki buyuk sag ust numaralandirma kaldirildi (dikkat dagitiyordu). Akis yeniden: Hero -> Hizmetler -> Surec -> CTA (eski: Hero -> Hizmetler -> Surec -> Avantaj -> CTA). PHP 58 satir azaldi (183 -> 125), CSS 63 satir azaldi. Sayfa %40 daha kisa ve netleşti.",
     "files": [
         ".htaccess",
         "404.php",
