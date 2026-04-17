@@ -102,6 +102,10 @@ $telefon_tel = preg_replace('/[^0-9+]/', '', ayar('telefon'));
         <div class="footer-bottom">
             <div>
                 © <?= date('Y') ?> <?= e(ayar('firma_adi')) ?>. Tüm hakları saklıdır.
+                <span class="footer-codega">
+                    Tasarım &amp; Geliştirme:
+                    <a href="https://codega.com.tr" target="_blank" rel="noopener noreferrer">CODEGA</a>
+                </span>
             </div>
             <div style="display:flex; gap:1.5rem;">
                 <a href="<?= e(SITE_URL) ?>/sayfa.php?slug=gizlilik-politikasi">Gizlilik Politikası</a>

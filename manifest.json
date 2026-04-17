@@ -1,7 +1,7 @@
 {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "date": "2026-04-17",
-    "notes": "İlk sürüm - Enamak Makina kurumsal site ve yönetim paneli",
+    "notes": "v1.1.0 - Mavi tema (ENA-MAK logosuyla uyumlu), DB schema hizalama fix'leri, eksik anasayfa CSS'leri, CODEGA imzası, defensive config sabitleri",
     "files": [
         "index.php",
         "urunler.php",
@@ -25,6 +25,7 @@
         "header.php",
         "footer.php",
         "update.php",
+        "manifest.json",
         "yonetim/index.php",
         "yonetim/header.php",
         "yonetim/footer.php",
@@ -50,7 +51,12 @@
         "yonetim/assets/admin.css",
         "yonetim/assets/admin.js",
         "assets/css/style.css",
-        "assets/js/script.js"
+        "assets/js/script.js",
+        "assets/img/logo.svg",
+        "assets/img/logo-white.svg",
+        "assets/img/favicon.svg",
+        "assets/img/og-image.svg",
+        "assets/img/placeholder.svg"
     ],
     "migrations": []
 }

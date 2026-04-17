@@ -62,7 +62,7 @@ if ($id && $islem === 'liste') {
         </div>
 
         <div style="margin-top:20px; font-size:12px; color:var(--text-3);">
-            IP: <?= e($m['ip']) ?>
+            IP: <?= e($m['ip_adresi']) ?>
         </div>
 
         <div class="form-actions">

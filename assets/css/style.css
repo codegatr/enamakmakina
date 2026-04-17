@@ -12,9 +12,9 @@
     --c-text: #e8ebf0;
     --c-text-2: #a8aeb8;
     --c-text-3: #6b7280;
-    --c-primary: #ff6b1a;
-    --c-primary-2: #ff8845;
-    --c-primary-dark: #d64f00;
+    --c-primary: #2563eb;
+    --c-primary-2: #3b82f6;
+    --c-primary-dark: #1e3a8a;
     --c-accent: #ffd166;
     --c-success: #10b981;
     --c-danger: #ef4444;
@@ -26,7 +26,7 @@
     --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
     --shadow-md: 0 8px 24px rgba(0,0,0,.4);
     --shadow-lg: 0 16px 48px rgba(0,0,0,.5);
-    --shadow-glow: 0 0 40px rgba(255,107,26,.15);
+    --shadow-glow: 0 0 40px rgba(37,99,235,.15);
 
     --radius-sm: 6px;
     --radius-md: 12px;
@@ -191,7 +191,7 @@ strong { font-weight: 700; color: var(--c-text); }
 .btn-primary:hover {
     background: var(--c-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255,107,26,.35);
+    box-shadow: 0 10px 30px rgba(37,99,235,.35);
 }
 
 .btn-outline {
@@ -203,7 +203,7 @@ strong { font-weight: 700; color: var(--c-text); }
 .btn-outline:hover {
     border-color: var(--c-primary);
     color: var(--c-primary);
-    background: rgba(255,107,26,.05);
+    background: rgba(37,99,235,.05);
 }
 
 .btn-ghost {
@@ -398,7 +398,7 @@ strong { font-weight: 700; color: var(--c-text); }
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(circle at 20% 50%, rgba(255,107,26,.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 50%, rgba(37,99,235,.15) 0%, transparent 40%),
         radial-gradient(circle at 80% 20%, rgba(255,209,102,.08) 0%, transparent 40%),
         linear-gradient(135deg, #0a0b0d 0%, #111317 100%);
 }
@@ -420,11 +420,11 @@ strong { font-weight: 700; color: var(--c-text); }
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle 2px at 25% 30%, rgba(255,107,26,.6), transparent),
+        radial-gradient(circle 2px at 25% 30%, rgba(37,99,235,.6), transparent),
         radial-gradient(circle 1px at 60% 70%, rgba(255,209,102,.4), transparent),
-        radial-gradient(circle 2px at 85% 35%, rgba(255,107,26,.5), transparent),
+        radial-gradient(circle 2px at 85% 35%, rgba(37,99,235,.5), transparent),
         radial-gradient(circle 1px at 15% 80%, rgba(255,209,102,.3), transparent),
-        radial-gradient(circle 1.5px at 70% 20%, rgba(255,107,26,.4), transparent);
+        radial-gradient(circle 1.5px at 70% 20%, rgba(37,99,235,.4), transparent);
 }
 
 .hero-content {
@@ -523,7 +523,7 @@ strong { font-weight: 700; color: var(--c-text); }
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(255,107,26,.15), transparent 50%);
+    background: radial-gradient(circle at 30% 30%, rgba(37,99,235,.15), transparent 50%);
 }
 
 .hero-machine-svg {
@@ -622,7 +622,7 @@ strong { font-weight: 700; color: var(--c-text); }
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255,107,26,.08), transparent 60%);
+    background: radial-gradient(circle at 30% 50%, rgba(37,99,235,.08), transparent 60%);
 }
 
 .urun-card-img img {
@@ -717,7 +717,7 @@ strong { font-weight: 700; color: var(--c-text); }
 }
 
 .hizmet-card:hover {
-    border-color: rgba(255,107,26,.3);
+    border-color: rgba(37,99,235,.3);
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
@@ -729,8 +729,8 @@ strong { font-weight: 700; color: var(--c-text); }
 .hizmet-ikon {
     width: 60px;
     height: 60px;
-    background: rgba(255,107,26,.1);
-    border: 1px solid rgba(255,107,26,.2);
+    background: rgba(37,99,235,.1);
+    border: 1px solid rgba(37,99,235,.2);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -835,7 +835,7 @@ strong { font-weight: 700; color: var(--c-text); }
     width: 600px;
     height: 600px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255,107,26,.2) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(37,99,235,.2) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -1104,7 +1104,7 @@ strong { font-weight: 700; color: var(--c-text); }
 .form-control:focus {
     outline: none;
     border-color: var(--c-primary);
-    box-shadow: 0 0 0 3px rgba(255,107,26,.1);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.1);
     background: var(--c-bg-2);
 }
 
@@ -1136,7 +1136,7 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 .alert-success { background: rgba(16,185,129,.08); border-color: var(--c-success); color: #86efac; }
 .alert-danger { background: rgba(239,68,68,.08); border-color: var(--c-danger); color: #fca5a5; }
 .alert-warn { background: rgba(245,158,11,.08); border-color: var(--c-warn); color: #fcd34d; }
-.alert-info { background: rgba(255,107,26,.08); border-color: var(--c-primary); color: #ffb380; }
+.alert-info { background: rgba(37,99,235,.08); border-color: var(--c-primary); color: #ffb380; }
 
 /* ============================================================
    PRODUCT DETAIL
@@ -1265,8 +1265,8 @@ textarea.form-control { min-height: 130px; resize: vertical; }
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-    background: rgba(255,107,26,.1);
-    border: 1px solid rgba(255,107,26,.2);
+    background: rgba(37,99,235,.1);
+    border: 1px solid rgba(37,99,235,.2);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1308,7 +1308,7 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 }
 
 .sss-item[open] {
-    border-color: rgba(255,107,26,.3);
+    border-color: rgba(37,99,235,.3);
 }
 
 .sss-soru {
@@ -1553,4 +1553,690 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 /* No-print */
 @media print {
     .site-header, .site-footer, .whatsapp-float, .mobile-bottom-nav { display: none !important; }
+}
+/* ============================================================
+   ENAMAK MAKINA - Anasayfa Section Stilleri (EK)
+   Bu blok style.css dosyasının SONUNA eklenmeli.
+   Slider, kategoriler, ürünler, hizmetler, referanslar, blog
+============================================================ */
+
+/* =========================================================
+   1. HERO SLIDER
+========================================================= */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: min(82vh, 720px);
+    min-height: 520px;
+    overflow: hidden;
+    background: #0a0b0d;
+}
+.slider-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+    transition: opacity .9s ease, visibility .9s, transform 6s ease;
+    display: flex;
+    align-items: center;
+}
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+}
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 11, 13, .88) 0%,
+        rgba(10, 11, 13, .58) 50%,
+        rgba(10, 11, 13, .82) 100%
+    );
+    z-index: 1;
+}
+.slide-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.slide-content {
+    max-width: 720px;
+}
+.slide-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--c-primary);
+    padding: 6px 14px;
+    border: 1px solid rgba(37,99,235,.4);
+    border-radius: 4px;
+    margin-bottom: 18px;
+    background: rgba(37,99,235,.08);
+}
+.slide-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: #fff;
+    margin: 0 0 20px;
+    text-shadow: 0 2px 30px rgba(0,0,0,.4);
+}
+.slide-desc {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--c-text-2);
+    max-width: 580px;
+    margin: 0 0 30px;
+}
+.slide-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Slider buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.15);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s;
+}
+.slider-btn:hover {
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+    transform: translateY(-50%) scale(1.08);
+}
+.slider-btn.prev { left: 28px; }
+.slider-btn.next { right: 28px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+.slider-dot {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.25);
+    border: 0;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 0;
+}
+.slider-dot.active {
+    background: var(--c-primary);
+    width: 48px;
+}
+.slider-dot:hover { background: rgba(255,255,255,.5); }
+
+/* =========================================================
+   2. ÖZELLİKLER (Feature Bar)
+========================================================= */
+.ozellikler-section {
+    padding: 48px 0;
+    background: var(--c-bg-2);
+    border-bottom: 1px solid var(--c-border);
+}
+.ozellikler-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+.ozellik {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.ozellik-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(37,99,235,.1);
+    color: var(--c-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.ozellik-icon svg { width: 24px; height: 24px; }
+.ozellik-text h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+    letter-spacing: -0.3px;
+}
+.ozellik-text p {
+    font-size: 13.5px;
+    color: var(--c-text-2);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================================
+   3. GENEL SECTION
+========================================================= */
+.section {
+    padding: 80px 0;
+    background: var(--c-bg);
+}
+.section.section-dark { background: var(--c-bg-2); }
+
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
+}
+.section-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--c-primary);
+    margin-bottom: 14px;
+    padding: 4px 12px;
+    background: rgba(37,99,235,.08);
+    border-radius: 4px;
+}
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 14px;
+    letter-spacing: -1px;
+    line-height: 1.15;
+}
+.section-desc {
+    font-size: 1.05rem;
+    color: var(--c-text-2);
+    line-height: 1.65;
+    margin: 0;
+}
+.section-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* =========================================================
+   4. KATEGORİLER
+========================================================= */
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+.kategori-card {
+    position: relative;
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+}
+.kategori-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-primary);
+    box-shadow: var(--shadow-md);
+}
+.kategori-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--c-bg-3);
+    overflow: hidden;
+    position: relative;
+}
+.kategori-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s;
+}
+.kategori-card:hover .kategori-img img { transform: scale(1.06); }
+.kategori-body {
+    padding: 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.kategori-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+    letter-spacing: -0.3px;
+}
+.kategori-desc {
+    font-size: 13.5px;
+    color: var(--c-text-2);
+    line-height: 1.55;
+    margin: 0 0 14px;
+    flex: 1;
+}
+.kategori-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--c-primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+.kategori-link:after {
+    content: '→';
+    transition: transform .2s;
+}
+.kategori-card:hover .kategori-link:after { transform: translateX(4px); }
+
+/* =========================================================
+   5. ÜRÜNLER
+========================================================= */
+.urun-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+}
+.urun-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s;
+}
+.urun-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--c-primary);
+    box-shadow: var(--shadow-lg);
+}
+.urun-img, .urun-img-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/11;
+    background: var(--c-bg-3);
+    overflow: hidden;
+    position: relative;
+}
+.urun-img img, .urun-img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+.urun-card:hover .urun-img img,
+.urun-card:hover .urun-img-link img { transform: scale(1.05); }
+.urun-body {
+    padding: 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.urun-kategori {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--c-primary);
+    margin-bottom: 10px;
+}
+.urun-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+.urun-title a { color: inherit; text-decoration: none; }
+.urun-title a:hover { color: var(--c-primary); }
+.urun-desc {
+    font-size: 13.5px;
+    color: var(--c-text-2);
+    line-height: 1.55;
+    margin: 0 0 18px;
+    flex: 1;
+}
+.urun-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* =========================================================
+   6. HİZMETLER
+========================================================= */
+.hizmet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.hizmet-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    padding: 32px 28px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+}
+.hizmet-card:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(37,99,235,.06));
+    opacity: 0;
+    transition: opacity .3s;
+}
+.hizmet-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-primary);
+    box-shadow: var(--shadow-md);
+}
+.hizmet-card:hover:before { opacity: 1; }
+.hizmet-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: rgba(37,99,235,.1);
+    color: var(--c-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+.hizmet-icon svg { width: 28px; height: 28px; }
+.hizmet-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: -0.3px;
+    position: relative;
+}
+.hizmet-title a { color: inherit; text-decoration: none; }
+.hizmet-desc {
+    font-size: 14px;
+    color: var(--c-text-2);
+    line-height: 1.6;
+    margin: 0 0 18px;
+    position: relative;
+}
+.hizmet-link {
+    color: var(--c-primary);
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+.hizmet-link:after {
+    content: '→';
+    transition: transform .2s;
+}
+.hizmet-card:hover .hizmet-link:after { transform: translateX(4px); }
+
+/* =========================================================
+   7. CTA SECTION (Teklif Çağrısı)
+========================================================= */
+.cta-section {
+    padding: 80px 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(37,99,235,.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(37,99,235,.1) 0%, transparent 50%),
+        var(--c-bg-2);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+}
+.cta-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.cta-text {
+    flex: 1;
+    min-width: 280px;
+}
+.cta-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+.cta-text p {
+    font-size: 1.05rem;
+    color: var(--c-text-2);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 640px;
+}
+.cta-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   8. REFERANSLAR
+========================================================= */
+.referans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+.referans-item {
+    aspect-ratio: 16/9;
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    transition: all .25s;
+    filter: grayscale(1) brightness(1.4);
+    opacity: .75;
+}
+.referans-item:hover {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+    border-color: var(--c-primary);
+    transform: translateY(-2px);
+}
+.referans-item img {
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+/* =========================================================
+   9. BLOG
+========================================================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+.blog-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s;
+}
+.blog-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-primary);
+    box-shadow: var(--shadow-md);
+}
+.blog-img, .blog-img-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: var(--c-bg-3);
+    overflow: hidden;
+}
+.blog-img img, .blog-img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+.blog-card:hover .blog-img img,
+.blog-card:hover .blog-img-link img { transform: scale(1.05); }
+.blog-body {
+    padding: 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--c-text-3);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.blog-meta span + span:before {
+    content: '•';
+    margin-right: 10px;
+    color: var(--c-border);
+}
+.blog-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+}
+.blog-title a { color: inherit; text-decoration: none; }
+.blog-title a:hover { color: var(--c-primary); }
+.blog-desc {
+    font-size: 14px;
+    color: var(--c-text-2);
+    line-height: 1.6;
+    margin: 0 0 18px;
+    flex: 1;
+}
+.blog-link {
+    color: var(--c-primary);
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.blog-link:after { content: '→'; transition: transform .2s; }
+.blog-card:hover .blog-link:after { transform: translateX(4px); }
+
+/* =========================================================
+   10. MOBİL DUYARLI
+========================================================= */
+@media (max-width: 768px) {
+    .hero-slider { min-height: 440px; height: 70vh; }
+    .slide-title { font-size: clamp(1.6rem, 7vw, 2.25rem); }
+    .slider-btn {
+        width: 40px; height: 40px;
+    }
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+    .section { padding: 56px 0; }
+    .cta-section { padding: 56px 0; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-text p { margin-left: auto; margin-right: auto; }
+    .ozellikler-grid { gap: 20px; }
+    .slide-actions { flex-direction: column; }
+    .slide-actions .btn { width: 100%; justify-content: center; }
+}
+@media (max-width: 480px) {
+    .kategori-grid, .urun-grid, .hizmet-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .slider-dots { bottom: 18px; }
+}
+
+/* ============================================================
+   CODEGA Footer İmza
+============================================================ */
+.footer-codega {
+    display: inline-block;
+    margin-left: 14px;
+    padding-left: 14px;
+    border-left: 1px solid var(--c-border);
+    color: var(--c-text-3);
+    font-size: 13px;
+}
+.footer-codega a {
+    color: var(--c-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .2s;
+    letter-spacing: 0.5px;
+}
+.footer-codega a:hover {
+    color: var(--c-primary-2);
+    text-decoration: underline;
+}
+@media (max-width: 640px) {
+    .footer-codega {
+        display: block;
+        margin: 8px 0 0;
+        padding: 8px 0 0;
+        border-left: 0;
+        border-top: 1px solid var(--c-border);
+    }
 }

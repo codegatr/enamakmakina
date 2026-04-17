@@ -5,6 +5,17 @@
 
 require_once __DIR__ . '/config.php';
 
+// ===================================================================
+// Defensive constants: config.php eski bir sürümse buradan tamamla
+// ===================================================================
+if (!defined('SITE_PATH'))       define('SITE_PATH', __DIR__);
+if (!defined('GITHUB_REPO'))     define('GITHUB_REPO', 'codegatr/enamakmakina');
+if (!defined('GITHUB_TOKEN'))    define('GITHUB_TOKEN', '');
+if (!defined('UPLOAD_MAX'))      define('UPLOAD_MAX', 5 * 1024 * 1024);
+if (!defined('UPLOAD_ALLOWED'))  define('UPLOAD_ALLOWED', ['jpg','jpeg','png','gif','webp','svg']);
+if (!defined('SESSION_TIMEOUT')) define('SESSION_TIMEOUT', 7200);
+if (!defined('CSRF_SECRET'))     define('CSRF_SECRET', defined('SECRET_KEY') ? SECRET_KEY : 'enamak_csrf_' . __FILE__);
+
 /**
  * XSS önlemi için escape
  */
@@ -247,10 +258,15 @@ function breadcrumb(array $items): string {
     $html .= '<li><a href="' . e(SITE_URL) . '/">Anasayfa</a></li>';
     $son = count($items) - 1;
     foreach ($items as $i => $item) {
-        if ($i === $son || empty($item['url'])) {
-            $html .= '<li aria-current="page">' . e($item['baslik']) . '</li>';
+        // Hem assoc (['baslik'=>..., 'url'=>...]) hem indexed (['Başlık', 'url']) formatı destekle
+        $baslik = $item['baslik'] ?? ($item[0] ?? '');
+        $url    = $item['url']    ?? ($item[1] ?? '');
+        // Anasayfa/index.php linki varsa atla (üstte zaten var)
+        if ($i === 0 && in_array(strtolower($baslik), ['anasayfa', 'ana sayfa'])) continue;
+        if ($i === $son || empty($url) || $url === '#') {
+            $html .= '<li aria-current="page">' . e($baslik) . '</li>';
         } else {
-            $html .= '<li><a href="' . e($item['url']) . '">' . e($item['baslik']) . '</a></li>';
+            $html .= '<li><a href="' . e($url) . '">' . e($baslik) . '</a></li>';
         }
     }
     $html .= '</ol></nav>';

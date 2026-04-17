@@ -10,7 +10,7 @@ $islem_f = trim($_GET['islem_f'] ?? '');
 $sayfa = max(1, (int)($_GET['sayfa'] ?? 1));
 $per = 50;
 $where = "1=1"; $params = [];
-if ($q) { $where .= " AND (aciklama LIKE :q OR islem LIKE :q OR ip LIKE :q)"; $params[':q'] = "%$q%"; }
+if ($q) { $where .= " AND (islem LIKE :q OR tablo LIKE :q OR ip_adresi LIKE :q)"; $params[':q'] = "%$q%"; }
 if ($islem_f) { $where .= " AND islem = :if"; $params[':if'] = $islem_f; }
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM denetim_kaydi WHERE $where");
 $stmt->execute($params);
@@ -52,7 +52,7 @@ include 'header.php';
                 <td><?= e($d['ad_soyad'] ?: $d['kullanici_adi'] ?: 'Bilinmiyor') ?></td>
                 <td><code style="background:var(--bg-3); padding:2px 8px; border-radius:4px; font-size:12px; color:var(--primary);"><?= e($d['islem']) ?></code></td>
                 <td><?= e($d['tablo'] ?: '—') ?><?php if ($d['kayit_id']): ?> #<?= (int)$d['kayit_id'] ?><?php endif; ?></td>
-                <td style="font-size:12px; color:var(--text-3);"><?= e($d['ip']) ?></td>
+                <td style="font-size:12px; color:var(--text-3);"><?= e($d['ip_adresi']) ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

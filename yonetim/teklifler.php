@@ -68,7 +68,7 @@ if ($id && $islem === 'liste') {
             </div>
         <?php endif; ?>
 
-        <div style="margin-top:20px; font-size:12px; color:var(--text-3);">IP: <?= e($t['ip']) ?></div>
+        <div style="margin-top:20px; font-size:12px; color:var(--text-3);">IP: <?= e($t['ip_adresi']) ?></div>
 
         <div class="form-actions" style="flex-wrap:wrap;">
             <a href="mailto:<?= e($t['email']) ?>?subject=Teklif%20-%20Enamak%20Makina" class="btn btn-outline">E-Posta</a>
