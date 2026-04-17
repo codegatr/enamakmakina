@@ -4182,3 +4182,118 @@ select.form-control {
     .sistem-banner-section { padding: 40px 0 48px; }
     .sistem-banner-head { margin-bottom: 24px; }
 }
+
+/* =========================================================
+   46. HİZMET DETAY SAYFASI (v1.4.5)
+========================================================= */
+
+.hizmet-detay-hero {
+    padding: 40px 0 48px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--c-bg-alt) 100%);
+    border-bottom: 1px solid var(--c-border);
+}
+.hizmet-detay-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 20px;
+}
+.hizmet-detay-hero-text .section-eyebrow {
+    margin-bottom: 10px;
+}
+.hizmet-detay-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--c-text);
+    margin: 8px 0 16px;
+}
+.hizmet-detay-lead {
+    font-size: 1.05rem;
+    color: var(--c-text-2);
+    line-height: 1.65;
+    margin: 0 0 24px;
+}
+.hizmet-detay-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.hizmet-detay-hero-image {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(30, 64, 175, 0.12);
+    background: #fff;
+    border: 1px solid var(--c-border);
+    aspect-ratio: 8 / 5;
+}
+.hizmet-detay-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hizmet içerik yapısı (lead + h3 + ul/ol) */
+.hizmet-icerik .lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--c-text);
+    padding: 18px 20px;
+    background: var(--c-primary-tint);
+    border-radius: var(--r-md);
+    border-left: 4px solid var(--c-primary);
+    margin: 0 0 32px;
+    font-weight: 500;
+}
+.hizmet-icerik h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--c-text);
+    margin: 32px 0 14px;
+    letter-spacing: -0.01em;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--c-border);
+}
+.hizmet-icerik h3:first-child { margin-top: 0; }
+.hizmet-icerik ul,
+.hizmet-icerik ol {
+    margin: 14px 0 24px;
+    padding-left: 22px;
+}
+.hizmet-icerik li {
+    margin: 8px 0;
+    line-height: 1.65;
+    color: var(--c-text-2);
+    padding-left: 4px;
+}
+.hizmet-icerik li strong {
+    color: var(--c-text);
+    font-weight: 600;
+}
+.hizmet-icerik ol li::marker {
+    font-weight: 700;
+    color: var(--c-primary);
+}
+
+@media (max-width: 900px) {
+    .hizmet-detay-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .hizmet-detay-hero-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .hizmet-detay-hero { padding: 32px 0 36px; }
+}
+@media (max-width: 560px) {
+    .hizmet-icerik .lead { padding: 14px 16px; font-size: 1rem; }
+    .hizmet-icerik h3 { font-size: 1.1rem; margin: 26px 0 12px; }
+    .hizmet-detay-actions .btn { width: 100%; justify-content: center; }
+}

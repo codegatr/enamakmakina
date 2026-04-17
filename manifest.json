@@ -1,7 +1,7 @@
 {
-    "version": "1.4.4",
+    "version": "1.4.5",
     "date": "2026-04-17",
-    "notes": "v1.4.4 Hizmetler sayfasi toparlandi - 'Neden Enamak' bolumu kaldirildi (hakkimizda'da zaten vardi - tekrar). Hero'daki 3 buyuk stat kutusu -> 3 kucuk chip pill'e donustu. Hizmet kartlarindaki buyuk sag ust numaralandirma kaldirildi (dikkat dagitiyordu). Akis yeniden: Hero -> Hizmetler -> Surec -> CTA (eski: Hero -> Hizmetler -> Surec -> Avantaj -> CTA). PHP 58 satir azaldi (183 -> 125), CSS 63 satir azaldi. Sayfa %40 daha kisa ve netleşti.",
+    "notes": "v1.4.5 Hizmet detay sayfalari toparlandi - 6 hizmet icin tutarli icerik formati (lead + 3 h3 bolum: Kapsamimiz/Surec/Avantajlari). Her hizmete ozel 6 yeni zengin SVG illustrasyonu (muhendislik:blueprint+3D kup+pergel, bakim:dev disli+anahtar, devreye-alma:forklift+kaci+checklist, yedek-parca:stok rafi+turbin+filtre, egitim:canli sunum+sertifika+kitap, destek:7/24 saat+headset+phone). hizmet.php 2-kolon hero layout (sol metin+sag gorsel), CSS'e 115 satir hizmet detay stili. Icerik 462-641 karakter aralikli/tutarsiz -> 1231-1545 karakter standardize. Karisik h3/ul/ol/strong -> 3 h3, her biri tematik. 6 hizmet toplam 8423 karakter kaliteli icerik.",
     "files": [
         ".htaccess",
         "404.php",

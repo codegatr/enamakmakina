@@ -827,3 +827,183 @@ WHERE NOT EXISTS (SELECT 1 FROM slider WHERE sira = 2);
 INSERT INTO slider (ust_baslik, baslik, aciklama, gorsel, buton_metin, buton_link, aktif, sira, sadece_gorsel)
 SELECT '', 'Projeye Özel Mühendislik', '', 'uploads/slider/slider-muhendislik.jpg', '', 'teklif-al.php', 1, 3, 1
 WHERE NOT EXISTS (SELECT 1 FROM slider WHERE sira = 3);
+
+-- =====================================================================
+-- HİZMET DETAY SAYFALARI — STANDARDİZE İÇERİK (v1.4.5)
+-- 6 hizmet için tutarlı format: lead + 3 bölüm (Kapsam/Süreç/Avantaj)
+-- =====================================================================
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Parça tipinize, üretim kapasitenize ve mekan koşullarınıza göre sıfırdan tasarlanan kumlama çözümleri. 3D CAD, FEA analizleri ve FAT dahil.',
+    aciklama = '<p class="lead">Her kumlama makinesi sahaya çıkmadan önce mühendislik masamızdan geçer. İthal kopyalama değil; <strong>parça boyutunuza, malzemenize ve üretim temponuza özel tasarım</strong> sunuyoruz.</p>
+
+<h3>Kapsamımız</h3>
+<ul>
+<li><strong>3D CAD Tasarımı</strong> — Kabin, türbin yerleşimi, konveyör/askı sistemleri için detaylı modelleme</li>
+<li><strong>Sonlu Elemanlar Analizi (FEA)</strong> — Yapısal dayanım ve titreşim simülasyonları</li>
+<li><strong>Türbin ve Filtre Hesaplamaları</strong> — Hava debisi, emiş gücü, partikül yakalama verimi</li>
+<li><strong>Layout Planlaması</strong> — Fabrika alanınıza optimize yerleşim, güvenlik mesafeleri</li>
+<li><strong>Enerji ve Altyapı Analizi</strong> — Elektrik, basınçlı hava, drenaj ihtiyaçları</li>
+</ul>
+
+<h3>Süreç</h3>
+<ol>
+<li>Parça analizi, tonaj ve kalite hedefinin belirlenmesi</li>
+<li>Ön tasarım ve konsept sunumu — 3D render ve teknik çizimler</li>
+<li>Müşteri onayı sonrası detay mühendislik</li>
+<li>FEA raporu ile yapısal güvence</li>
+<li>Şeffaf maliyet analizi ve üretim programı</li>
+</ol>
+
+<h3>Avantajları</h3>
+<ul>
+<li>Standart katalog yerine <strong>projenize özel çözüm</strong></li>
+<li>Satış öncesi simülasyon ile sürpriz yok</li>
+<li>Tüm çizimler ve hesaplar müşteriye teslim edilir</li>
+</ul>'
+WHERE slug = 'muhendislik-proje-tasarimi';
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Tüm kumlama makineleri için periyodik bakım ve onarım. Marka bağımsız: Endümak, Abana, Strong, SATMAK, Saygılı ve tüm ithal markalar.',
+    aciklama = '<p class="lead">Kumlama makinenizin ömrünü uzatmak ve beklenmedik duruşları önlemek için <strong>planlı bakım programları</strong> ve <strong>acil onarım hizmetleri</strong> sunuyoruz. Kendi ürettiğimiz makinelerle sınırlı değiliz — tüm markalara servis veriyoruz.</p>
+
+<h3>Bakım Paketlerimiz</h3>
+<ul>
+<li><strong>Altın Paket</strong> — 3 ayda bir tam kontrol, sarf malzeme dahil, acil müdahale önceliği</li>
+<li><strong>Standart Paket</strong> — 6 ayda bir bakım ziyareti, genel kontrol ve raporlama</li>
+<li><strong>Acil Onarım</strong> — Arıza durumunda 24-48 saat içinde sahada, yerli yedek parça ile müdahale</li>
+</ul>
+
+<h3>Servis Verdiğimiz Markalar</h3>
+<ul>
+<li><strong>Yerli:</strong> Endümak, Abana Makina, Strong Makine, SATMAK, Saygılı, Sedmak, Tolermak</li>
+<li><strong>İthal:</strong> Wheelabrator, Pangborn, Rösler, ITS, Blastrac ve diğer tüm markalar</li>
+<li><strong>Tüm tipler:</strong> Askılı, tamburlu, basınçlı, tünel, basınç hava tabancalı sistemler</li>
+</ul>
+
+<h3>Avantajları</h3>
+<ul>
+<li><strong>Plansız duruşlar %70 azalır</strong> — önleyici bakım ile arızalar öngörülür</li>
+<li>Yedek parça yerli stoklu — ithalat beklenmez</li>
+<li>Raporlu bakım — her ziyaret dokümantasyonu teslim edilir</li>
+</ul>'
+WHERE slug = 'bakim-ve-onarim';
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Makinenin sahaya nakli, montajı, kalibrasyonu ve operatör eğitimi. 2 yıllık ücretsiz teknik destek başlangıcı.',
+    aciklama = '<p class="lead">Kumlama makinesi sipariş ettiniz; peki <strong>sahada çalışır hale gelmesi</strong>? İşte bu kritik aşama bize emanet. Teslim öncesi saha hazırlığından operatör eğitimine kadar her adımı biz yönetiyoruz.</p>
+
+<h3>Kurulum Aşamaları</h3>
+<ol>
+<li><strong>Saha Ön İncelemesi</strong> — Teslim öncesi teknik ekip sahayı ziyaret eder; enerji, basınçlı hava, drenaj ve zemin altyapısı kontrol edilir</li>
+<li><strong>Nakliye</strong> — Enamak nakliye ekibi makineyi özel ambalajla teslim eder, yükleme-indirme koordinasyonu yapılır</li>
+<li><strong>Montaj</strong> — Kabin, türbin, kompresör, filtre ve aşındırıcı hattı bağlantıları profesyonel ekiple kurulur</li>
+<li><strong>Kalibrasyon</strong> — Tam yük testi, türbin dengeleme, filtre çekiş optimizasyonu, emniyet kontrolü</li>
+<li><strong>Operatör Eğitimi</strong> — 2-3 günlük teknik ve kullanıcı eğitimi, yazılı doküman teslimi</li>
+</ol>
+
+<h3>Neler Dahil</h3>
+<ul>
+<li><strong>Saha Mühendisi</strong> — Projenin sonuna kadar aynı mühendis koordine eder</li>
+<li><strong>FAT Raporu</strong> — Fabrikada yapılan kabul testinin detaylı belgesi</li>
+<li><strong>Kurulum Sertifikası</strong> — CE uyumluluk ve güvenlik kontrolü raporu</li>
+<li><strong>Bakım Kılavuzu</strong> — Türkçe operatör ve teknisyen dokümanları</li>
+</ul>
+
+<h3>Avantajları</h3>
+<ul>
+<li><strong>2 yıllık garanti</strong> kurulum tamamlandığında başlar</li>
+<li>Operatörleriniz gereksiz deneme-yanılma yapmadan üretime geçer</li>
+<li>İlk ay içinde oluşabilecek ayar ihtiyaçları ücretsiz karşılanır</li>
+</ul>'
+WHERE slug = 'devreye-alma-kurulum';
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Türbin kanatları, manganlı astarlar, filtre kartuşları, O-ring setleri. Kritik yedekler yerli depomuzda, 24-48 saat içinde sevk.',
+    aciklama = '<p class="lead">Kumlama makinenizin <strong>kritik yedek parçaları depomuzda</strong>. Arıza durumunda yurt dışı bekleme, gümrük, kargo gecikmesi yok. Türkiye genelinde 24-48 saat içinde kapınızda.</p>
+
+<h3>Stokumuzda Olan Ana Parçalar</h3>
+<ul>
+<li><strong>Türbin Kanatları</strong> — Mangan alaşımlı, tüm standart ve özel ölçülerde</li>
+<li><strong>Manganlı Çelik Astarlar</strong> — Kabin yan, taban, tavan ve askı panelleri</li>
+<li><strong>Filtre Kartuşları</strong> — HEPA, G4, standart endüstriyel sınıf</li>
+<li><strong>Kauçuk Tamburlar</strong> — Shore 65A ve 70A sertliklerinde</li>
+<li><strong>O-ring ve Conta Setleri</strong> — NBR, EPDM, silikon tipleri</li>
+<li><strong>Elevatör Kepçeleri</strong> — Plastik ve metal kombinasyonları</li>
+<li><strong>Motor ve Redüktörler</strong> — Türbin ve konveyör tahrik sistemleri</li>
+</ul>
+
+<h3>Hizmet Kalitemiz</h3>
+<ul>
+<li><strong>Orijinal kalitede yedek</strong> — aynı teknik özelliklerde, hatta bazılarında iyileştirilmiş</li>
+<li><strong>Kimyasal analiz sertifikası</strong> — mangan içeriği ve alaşım raporu her teslimatta</li>
+<li><strong>Hızlı sevk</strong> — Konya merkezden Türkiye geneli kargo</li>
+<li><strong>Montaj desteği</strong> — Telefon veya video call ile tekniklerinize rehberlik</li>
+</ul>
+
+<h3>Avantajları</h3>
+<ul>
+<li><strong>%60 daha ucuz</strong> — ithal eşdeğerlerine göre</li>
+<li><strong>Sıfır ithalat geciktirmesi</strong> — yerli stok, yerli sevk</li>
+<li>Abonelik modeli ile periyodik otomatik sevkiyat mümkün</li>
+</ul>'
+WHERE slug = 'yedek-parca-tedariki';
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Makine kullanıcılarınız için teknik eğitim. ISO 8501-1 Sa 2.5 standardı, aşındırıcı seçimi, günlük bakım kontrolü.',
+    aciklama = '<p class="lead">Kumlama makinesinin performansı <strong>%50 makineden, %50 operatörden</strong> gelir. Doğru kullanım bilgisi olmadan en kaliteli makine bile zayıf sonuç verir. Enamak eğitim programı ile ekibinizi uzmanlaştırıyoruz.</p>
+
+<h3>Eğitim Modüllerimiz</h3>
+<ul>
+<li><strong>Yüzey Hazırlık Standartları</strong> — ISO 8501-1 ve Sa 1/2/2.5/3 seviyelerinin teknik anlamı</li>
+<li><strong>Aşındırıcı Seçimi</strong> — Çelik bilye, grit, garnet, silisyum karbür karşılaştırması</li>
+<li><strong>Kabin İçi Astar Kontrolü</strong> — Yıpranma tespiti ve değişim prosedürü</li>
+<li><strong>Türbin Kanat Analizi</strong> — Dengesizlik, titreşim, verim kaybı belirtileri</li>
+<li><strong>Filtre Bakım Rutini</strong> — Temizleme aralıkları, kartuş değişim zamanlaması</li>
+<li><strong>İş Güvenliği</strong> — Toz maruziyeti, KKD kullanımı, acil müdahale</li>
+</ul>
+
+<h3>Eğitim Formatı</h3>
+<ol>
+<li>Sahada teorik eğitim — sunum ve dokümanlarla (1 gün)</li>
+<li>Uygulamalı pratik — makine başında birebir çalışma (1-2 gün)</li>
+<li>Değerlendirme sınavı ve sertifika teslimi</li>
+<li>3 ay sonra takip ziyareti — uygulama gözlemi ve pekiştirme</li>
+</ol>
+
+<h3>Avantajları</h3>
+<ul>
+<li><strong>Verimde %20-30 artış</strong> — doğru aşındırıcı seçimi ve kullanımı ile</li>
+<li>Astar ve türbin ömrü uzar — hatalı operasyon kaynaklı aşınma azalır</li>
+<li>Operatörler <strong>Enamak Eğitim Sertifikası</strong> alır — kurumsal değer</li>
+</ul>'
+WHERE slug = 'operator-bakim-egitimi';
+
+UPDATE hizmetler SET
+    kisa_aciklama = 'Arıza, kullanım sorusu, yedek parça talebi için 7/24 telefon ve WhatsApp hattı. Uzak masaüstü destek ve saha müdahale.',
+    aciklama = '<p class="lead">Makineniz duruyor. Üretim hattı bekliyor. Her saatin maliyeti var. <strong>Biz hemen buradayız</strong> — 7 gün 24 saat erişilebilir teknik destek hattımız, uzak müdahale yetkinliğimiz ve hızlı saha ekibimizle.</p>
+
+<h3>Destek Kanallarımız</h3>
+<ul>
+<li><strong>Telefon Hattı</strong> — 7/24 açık, mesai saati sonrası nöbetçi mühendis karşılar</li>
+<li><strong>WhatsApp Business</strong> — Fotoğraf ve video gönderin, görsel tanı yapalım</li>
+<li><strong>Uzak Masaüstü (TeamViewer)</strong> — PLC ve HMI arızalarına uzaktan anında müdahale</li>
+<li><strong>Saha Ziyareti</strong> — Bölgenize göre 24-48 saat içinde yerinde</li>
+<li><strong>Mail Destek</strong> — Bilgi sorularına 4 saat içinde yazılı yanıt</li>
+</ul>
+
+<h3>Tipik Müdahale Senaryoları</h3>
+<ol>
+<li><strong>Türbin arızası:</strong> Uzaktan titreşim/akım analizi → yedek parça sevki aynı gün</li>
+<li><strong>PLC kilitlenmesi:</strong> TeamViewer bağlantısı → 30 dakika içinde çözüm</li>
+<li><strong>Filtre alarmı:</strong> WhatsApp görüntü → uzaktan parametre ayarı</li>
+<li><strong>Kapsamlı arıza:</strong> Saha ekibi yönlendirme → 24-48 saatte yerinde</li>
+</ol>
+
+<h3>Avantajları</h3>
+<ul>
+<li><strong>Ortalama ilk tepki süresi: 15 dakika</strong> (mesai dışında dahi)</li>
+<li>Uzaktan çözüm oranı %40 — saha gelmeden sorun giderilebilir</li>
+<li>Tüm müdahaleler <strong>müşteri ticket sisteminde kayıtlı</strong>, geçmiş erişilebilir</li>
+</ul>'
+WHERE slug = '7-24-teknik-destek';

@@ -12,7 +12,7 @@ if (!$hizmet) {
     exit;
 }
 
-$diger = $pdo->prepare("SELECT * FROM hizmetler WHERE aktif = 1 AND id != ? ORDER BY sira LIMIT 4");
+$diger = $pdo->prepare("SELECT * FROM hizmetler WHERE aktif = 1 AND id != ? ORDER BY sira LIMIT 5");
 $diger->execute([$hizmet['id']]);
 $diger_hizmetler = $diger->fetchAll();
 
@@ -29,26 +29,37 @@ $breadcrumb = [
 include 'header.php';
 ?>
 
-<section class="page-header">
+<!-- HERO -->
+<section class="hizmet-detay-hero">
     <div class="container">
         <?= breadcrumb($breadcrumb) ?>
-        <h1 class="page-title"><?= e($hizmet['ad']) ?></h1>
-        <?php if (!empty($hizmet['kisa_aciklama'])): ?>
-            <p class="page-desc"><?= e($hizmet['kisa_aciklama']) ?></p>
-        <?php endif; ?>
+        <div class="hizmet-detay-hero-grid">
+            <div class="hizmet-detay-hero-text">
+                <span class="section-eyebrow">HİZMET</span>
+                <h1 class="hizmet-detay-title"><?= e($hizmet['ad']) ?></h1>
+                <?php if (!empty($hizmet['kisa_aciklama'])): ?>
+                    <p class="hizmet-detay-lead"><?= e($hizmet['kisa_aciklama']) ?></p>
+                <?php endif; ?>
+                <div class="hizmet-detay-actions">
+                    <a href="teklif-al.php" class="btn btn-primary btn-lg">Teklif Al</a>
+                    <a href="iletisim.php" class="btn btn-outline btn-lg">İletişime Geç</a>
+                </div>
+            </div>
+            <?php if (!empty($hizmet['gorsel'])): ?>
+            <div class="hizmet-detay-hero-image">
+                <img src="<?= e(resim_url($hizmet['gorsel'])) ?>" alt="<?= e($hizmet['ad']) ?>" loading="eager">
+            </div>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 
-<section class="section section-top-tight">
+<!-- İÇERİK + SIDEBAR -->
+<section class="section">
     <div class="container">
         <div class="icerik-layout">
             <article class="icerik-ana">
-                <?php if (!empty($hizmet['gorsel'])): ?>
-                    <div class="icerik-gorsel">
-                        <img src="<?= e(resim_url($hizmet['gorsel'])) ?>" alt="<?= e($hizmet['ad']) ?>">
-                    </div>
-                <?php endif; ?>
-                <div class="icerik-alani">
+                <div class="icerik-alani hizmet-icerik">
                     <?= $hizmet['aciklama'] ?>
                 </div>
 
@@ -57,7 +68,7 @@ include 'header.php';
                         <h3>Bu hizmetten yararlanmak ister misiniz?</h3>
                         <p>Ekibimiz ihtiyaçlarınızı değerlendirip size özel çözüm sunar.</p>
                     </div>
-                    <a href="iletisim.php" class="btn btn-primary btn-lg">İletişime Geç</a>
+                    <a href="teklif-al.php" class="btn btn-primary btn-lg">Teklif Al</a>
                 </div>
             </article>
 
@@ -77,8 +88,8 @@ include 'header.php';
                 </div>
                 <div class="sidebar-box sidebar-cta">
                     <h3>Hızlı İletişim</h3>
-                    <p><strong>Telefon:</strong><br><?= e(ayar('telefon')) ?></p>
-                    <p><strong>E-Posta:</strong><br><?= e(ayar('email')) ?></p>
+                    <p><strong>Telefon</strong><br><a href="tel:<?= e(preg_replace('/[^0-9+]/', '', ayar('telefon'))) ?>"><?= e(ayar('telefon')) ?></a></p>
+                    <p><strong>E-Posta</strong><br><a href="mailto:<?= e(ayar('email')) ?>"><?= e(ayar('email')) ?></a></p>
                     <a href="teklif-al.php" class="btn btn-primary btn-block">Teklif Al</a>
                 </div>
             </aside>
