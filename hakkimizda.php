@@ -63,7 +63,7 @@ include 'header.php';
             <p>Kumlama kabininden toz toplama sistemine, kontrol panelinden abrasif ekipmana kadar tüm bileşenleri tek çatı altında mühendislik düzeninde tasarlıyor ve üretiyoruz.</p>
         </div>
         <div class="sistem-banner-image">
-            <img src="uploads/hakkimizda/sistem-bilesenleri.jpg" alt="Enamak Makina Endüstriyel Kumlama Sistemleri - Sistem Bileşenleri ve Uygulama Alanları" loading="lazy">
+            <img src="uploads/hakkimizda/sistem-bilesenleri.svg" alt="Enamak Makina Endüstriyel Kumlama Sistemleri - Sistem Bileşenleri ve Uygulama Alanları" loading="lazy">
         </div>
     </div>
 </section>

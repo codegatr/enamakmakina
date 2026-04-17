@@ -1272,3 +1272,13 @@ UPDATE hizmetler SET
 <p><strong>Not:</strong> Enamak Makina tarafından üretilen makinelerde destek hattımız sadece ürettiğimiz makinelerle sınırlı değildir. Marka bağımsız olarak Endümak, Abana, Strong, SATMAK ve ithal markalarda da danışmanlık veriyoruz.</p>',
     gorsel = 'uploads/hizmetler/teknik-destek.jpg'
 WHERE slug = '7-24-teknik-destek';
+
+-- =====================================================================
+-- HİZMET GÖRSEL JPG → SVG (v1.4.8)
+-- ChatGPT fotoğrafları yerine profesyonel SVG illüstrasyonlar
+-- =====================================================================
+UPDATE hizmetler SET gorsel = 'uploads/hizmetler/muhendislik.svg'
+WHERE slug = 'muhendislik-proje-tasarimi';
+
+UPDATE hizmetler SET gorsel = 'uploads/hizmetler/teknik-destek.svg'
+WHERE slug = '7-24-teknik-destek';

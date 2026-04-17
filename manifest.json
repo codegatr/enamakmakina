@@ -1,7 +1,7 @@
 {
-    "version": "1.4.7",
+    "version": "1.4.8",
     "date": "2026-04-17",
-    "notes": "v1.4.7 Slider 'Varsayilan Yukle' butonu SVG illustrasyonlara donduruldu - onceki sürüm 2 ve 3. sliderlari ChatGPT JPG + sadece_gorsel modda yukluyordu. Kullanici SVG'leri istedi. Artik 3 slider da SVG illustrasyonu ile + normal mod (metin overlay CSS ile gosteriliyor): slider-1.svg (Endustriyel Kumlama), slider-2.svg (7/24 Servis), slider-3.svg (Projeye Ozel Muhendislik). Metinler slider-2.svg + slider-3.svg icin CSS overlay'den gosterilir.",
+    "notes": "v1.4.8 ChatGPT fotograflari kaldirildi - hepsi profesyonel SVG illustrasyonlarla degistirildi. 2 hizmet (Muhendislik + 7/24 Destek) icin yeni zengin SVG'ler olusturuldu (diger 4 hizmet SVG'si ile uyumlu stil). Hakkimizda 'Sistem Bilesenleri' banner'i JPG yerine buyuk SVG infografik (1200x600, kabin+toz toplama+kontrol paneli+komponent bağlantilari+4 ozellik rozeti). Manifest'ten 5 JPG kaldirildi, paket boyutu ~1.2MB azaldi.",
     "files": [
         ".htaccess",
         "404.php",
@@ -96,11 +96,7 @@
         "yonetim/sss.php",
         "yonetim/teklifler.php",
         "yonetim/urunler.php",
-        "uploads/slider/slider-servis.jpg",
-        "uploads/slider/slider-muhendislik.jpg",
-        "uploads/hakkimizda/sistem-bilesenleri.jpg",
-        "uploads/hizmetler/muhendislik.jpg",
-        "uploads/hizmetler/teknik-destek.jpg"
+        "uploads/hakkimizda/sistem-bilesenleri.svg"
     ],
     "migrations": [
         "migration-v1.3.0-content.sql"
