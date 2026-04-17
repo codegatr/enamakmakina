@@ -210,6 +210,62 @@ include 'header.php';
     </div>
 </section>
 
+<!-- SERTİFİKALAR & KALİTE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">KALİTE STANDARTLARI</span>
+            <h2 class="section-title">Sertifikalarımız &amp; uyumluluk</h2>
+            <p class="section-desc">Makinelerimiz ulusal ve uluslararası standartlara uygun şekilde imal edilir. Her ana komponent sertifikalı malzemeden üretilir.</p>
+        </div>
+
+        <div class="sertifika-grid">
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <strong>CE İşareti</strong>
+                <span>Avrupa Birliği makine güvenlik yönetmeliğine uygunluk. Elektrik ve mekanik güvenlik testleri.</span>
+            </div>
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <strong>ISO 8501-1</strong>
+                <span>Yüzey hazırlık standardı. Tüm kumlama makinelerimiz Sa 2.5 temizlik seviyesini garanti eder.</span>
+            </div>
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <strong>Manganlı Çelik</strong>
+                <span>Kabin astarları Mn13 alaşımından. Her teslimatta kimyasal analiz sertifikası.</span>
+            </div>
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-7 7-3-3"/></svg>
+                </div>
+                <strong>FAT Raporu</strong>
+                <span>Fabrika Kabul Testi her teslimat için. Tam yük altında performans raporlaması.</span>
+            </div>
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10v10H7z"/></svg>
+                </div>
+                <strong>TSE Uyumlu</strong>
+                <span>Türk Standartları Enstitüsü uyumluluğu. Yerli üretim belgesi mevcut.</span>
+            </div>
+            <div class="sertifika-card">
+                <div class="sertifika-ikon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M5 8h14M5 16h14"/></svg>
+                </div>
+                <strong>2 Yıl Garanti</strong>
+                <span>Tüm makinelerimize standart 2 yıl garanti. Uzatma paketi ile 5 yıla kadar çıkabilir.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CEO SÖZÜ -->
 <section class="section">
     <div class="container container-narrow">

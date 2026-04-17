@@ -1,7 +1,7 @@
 {
-    "version": "1.3.8",
+    "version": "1.3.9",
     "date": "2026-04-17",
-    "notes": "v1.3.8 Yonetim paneli okunurluk ve renk duzeltmeleri - 30+ yerde eski dark theme'den kalan 'color:#fff' (beyaz uzerinde beyaz = gorunmez) sorunu duzeltildi. Guncelleme sayfasi yeniden tasarlandi (gradient mevcut surum karti, daha okunaklu repo bilgileri tablosu, secilen geçmis liste kayitlari). Admin CSS'e 300+ satir kontrast/mobile iyilestirmesi eklendi.",
+    "notes": "v1.3.9 Kurumsal sayfa iyilestirmeleri - iletisim.php ve hizmetler.php tamamen yeniden yazildi, hakkimizda.php'ye sertifika bolumu eklendi. Iletisim'de 4 hizli kanal karti + departman listesi + sosyal medya + harita head. Hizmetler'de hero + istatistik + 5 adim surec + 6 avantaj karti + numaralandirma. Hakkimizda'da 6 kalite/sertifika karti (CE, ISO 8501-1, Manganli Celik, FAT, TSE, 2 Yil Garanti). CSS'e 650+ satir eklendi.",
     "files": [
         ".htaccess",
         "404.php",
