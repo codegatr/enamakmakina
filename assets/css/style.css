@@ -2845,3 +2845,87 @@ select.form-control {
     .logo.logo-real img { height: 40px; }
     .site-header .logo.logo-real img { height: 40px; }
 }
+
+/* =========================================================
+   38. ACİL DÜZELTMELER (v1.3.3)
+========================================================= */
+
+/* Iletisim sayfasi ikon kutularinin boyutu */
+.iletisim-bilgi .bilgi-kutu {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--c-border);
+}
+.iletisim-bilgi .bilgi-kutu:last-child { border-bottom: 0; }
+.iletisim-bilgi .bilgi-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--r-md);
+    background: var(--c-primary-tint);
+    color: var(--c-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.iletisim-bilgi .bilgi-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px;
+    max-height: 24px;
+}
+.iletisim-bilgi .bilgi-kutu > div:not(.bilgi-icon) {
+    flex: 1;
+    min-width: 0;
+}
+.iletisim-bilgi .bilgi-kutu h4 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 0 0 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.iletisim-bilgi .bilgi-kutu p {
+    font-size: 14px;
+    color: var(--c-text-2);
+    margin: 0;
+    line-height: 1.55;
+}
+.iletisim-bilgi .bilgi-kutu p a {
+    color: var(--c-primary);
+    font-weight: 500;
+}
+.iletisim-bilgi .bilgi-kutu p a:hover {
+    text-decoration: underline;
+}
+
+/* Genel önlem: bilgi-kutu icerisinde olmayan icon'lar da büyümesin */
+.iletisim-bilgi svg:not(.bilgi-icon svg) {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+/* Footer'da iletişim SVG'leri de guvende olsun */
+.footer-col svg {
+    max-width: 20px;
+    max-height: 20px;
+    flex-shrink: 0;
+}
+
+/* Header'da telefon numarasi alt alta kirilmasin */
+.header-phone,
+.header-phone span {
+    white-space: nowrap;
+}
+.header-phone {
+    min-width: auto;
+    max-width: max-content;
+}
+/* Header container'inda flex gap ve responsive sikisma */
+.site-header .container {
+    gap: 16px;
+}

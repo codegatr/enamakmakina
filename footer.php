@@ -33,10 +33,10 @@ $telefon_tel = preg_replace('/[^0-9+]/', '', ayar('telefon'));
                 <ul>
                     <?php
                     try {
-                        $kategoriler = $pdo->query("SELECT baslik, slug FROM urun_kategoriler WHERE aktif = 1 ORDER BY sira LIMIT 7")->fetchAll();
+                        $kategoriler = $pdo->query("SELECT ad, slug FROM urun_kategoriler WHERE aktif = 1 ORDER BY sira LIMIT 7")->fetchAll();
                         foreach ($kategoriler as $kat):
                     ?>
-                    <li><a href="<?= e(SITE_URL) ?>/urunler.php?kategori=<?= e($kat['slug']) ?>"><?= e($kat['baslik']) ?></a></li>
+                    <li><a href="<?= e(SITE_URL) ?>/urunler.php?kategori=<?= e($kat['slug']) ?>"><?= e($kat['ad']) ?></a></li>
                     <?php
                         endforeach;
                     } catch (Exception $e) {}
@@ -49,10 +49,10 @@ $telefon_tel = preg_replace('/[^0-9+]/', '', ayar('telefon'));
                 <ul>
                     <?php
                     try {
-                        $hizmetler_footer = $pdo->query("SELECT baslik, slug FROM hizmetler WHERE aktif = 1 ORDER BY sira LIMIT 6")->fetchAll();
+                        $hizmetler_footer = $pdo->query("SELECT ad, slug FROM hizmetler WHERE aktif = 1 ORDER BY sira LIMIT 6")->fetchAll();
                         foreach ($hizmetler_footer as $h):
                     ?>
-                    <li><a href="<?= e(SITE_URL) ?>/hizmet.php?slug=<?= e($h['slug']) ?>"><?= e($h['baslik']) ?></a></li>
+                    <li><a href="<?= e(SITE_URL) ?>/hizmet.php?slug=<?= e($h['slug']) ?>"><?= e($h['ad']) ?></a></li>
                     <?php
                         endforeach;
                     } catch (Exception $e) {}

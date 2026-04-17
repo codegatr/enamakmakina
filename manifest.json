@@ -1,7 +1,7 @@
 {
-    "version": "1.3.2",
+    "version": "1.3.3",
     "date": "2026-04-17",
-    "notes": "v1.3.2 - Kategori ve urun gorsellerı isometric 3D profesyonel tarzinda yeniden tasarlandi. Metalik govdeli, gradient katmanli, detayli turbin, kontrol paneli ve taban golgesi ile teknik katalog cizim havasi. Kartoon stilinden kurumsal gorunume gecis.",
+    "notes": "v1.3.3 Kritik Fix - Footer'da Urunler/Hizmetler listesi bostu (SQL alan adi 'baslik' yerine 'ad' olmali, duzeltildi). Logo 'ENA-MAK' yazisi sag kenardan kesiliyordu (SVG viewBox 1100->1200). Iletisim sayfasinda telefon/email ikonlari DEVASA goruntuleniyordu (bilgi-icon CSS eklendi). Header'da telefon numarasi 3 satira kiriliyordu (white-space nowrap).",
     "files": [
         "index.php",
         "urunler.php",
