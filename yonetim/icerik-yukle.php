@@ -29,6 +29,7 @@ $calistirildi = false;
 $log = [];
 $hata_sayisi = 0;
 $basari_sayisi = 0;
+$atlandi_sayisi = 0;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['yukle'])) {
     $calistirildi = true;
@@ -50,6 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['yukle'])) {
         $statements = preg_split('/;\s*\n/', $clean);
         $log[] = ['tip' => 'bilgi', 'mesaj' => 'Parse edilen statement sayisi: ' . count($statements)];
 
+        // Idempotent hatalar: "zaten yapilmis" anlami tasiyan, gercek hata degil
+        $benign_codes = ['42S21', '42S01', '23000', '42000'];
+        $benign_patterns = ['duplicate column', 'already exists', 'duplicate key name', 'duplicate entry'];
+
         foreach ($statements as $idx => $stmt) {
             $stmt = trim($stmt, " \n\r\t;");
             if ($stmt === '') continue;
@@ -62,12 +67,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['yukle'])) {
                 $basari_sayisi++;
                 $log[] = ['tip' => 'ok', 'mesaj' => '#' . ($idx + 1) . ': ' . $ozet . '...'];
             } catch (Exception $e) {
-                $hata_sayisi++;
-                $log[] = ['tip' => 'hata', 'mesaj' => '#' . ($idx + 1) . ' HATA: ' . $e->getMessage() . ' | SQL: ' . $ozet];
+                $msg = $e->getMessage();
+                $is_benign = false;
+                foreach ($benign_codes as $code) {
+                    if (strpos($msg, $code) !== false) { $is_benign = true; break; }
+                }
+                if (!$is_benign) {
+                    $msg_lower = strtolower($msg);
+                    foreach ($benign_patterns as $bm) {
+                        if (strpos($msg_lower, $bm) !== false) { $is_benign = true; break; }
+                    }
+                }
+                if ($is_benign) {
+                    $atlandi_sayisi++;
+                    $log[] = ['tip' => 'atlandi', 'mesaj' => '#' . ($idx + 1) . ' ATLANDI (zaten yapilmis): ' . $ozet . '...'];
+                } else {
+                    $hata_sayisi++;
+                    $log[] = ['tip' => 'hata', 'mesaj' => '#' . ($idx + 1) . ' HATA: ' . $msg . ' | SQL: ' . $ozet];
+                }
             }
         }
 
-        $log[] = ['tip' => 'bilgi', 'mesaj' => 'Toplam: ' . $basari_sayisi . ' basarili, ' . $hata_sayisi . ' hatali.'];
+        $ozet_msg = 'Toplam: ' . $basari_sayisi . ' basarili';
+        if ($atlandi_sayisi > 0) $ozet_msg .= ', ' . $atlandi_sayisi . ' atlandi';
+        if ($hata_sayisi > 0) $ozet_msg .= ', ' . $hata_sayisi . ' hatali';
+        $ozet_msg .= '.';
+        $log[] = ['tip' => 'bilgi', 'mesaj' => $ozet_msg];
     }
 }
 
@@ -144,7 +169,12 @@ include __DIR__ . '/header.php';
                 <span style="color: #dc2626;">⚠ Bazı statement'lar hata aldı</span>
             <?php endif; ?>
         </h3>
-        <p>Başarılı: <strong><?= $basari_sayisi ?></strong> statement, Hatalı: <strong><?= $hata_sayisi ?></strong> statement</p>
+        <p>Başarılı: <strong><?= $basari_sayisi ?></strong> · Atlandı: <strong><?= $atlandi_sayisi ?></strong> · Hatalı: <strong><?= $hata_sayisi ?></strong> statement</p>
+        <?php if ($atlandi_sayisi > 0 && $hata_sayisi === 0): ?>
+            <p style="color: #475569; font-size: 13px; margin-top: 6px;">
+                <strong>ℹ Atlanan statement'lar</strong> — "zaten yapılmış" olan ALTER TABLE / INSERT işlemleridir (örn. kolon zaten var). Bu normal bir davranıştır, migration dosyası tekrar çalıştırıldığında yeniden yapılmaz.
+            </p>
+        <?php endif; ?>
         <form method="post" action="icerik-yukle.php" style="margin-top: 12px;">
             <button type="submit" name="yukle" value="1" class="btn btn-outline" onclick="return confirm('Tekrar çalıştırılsın mı?')">
                 Yeniden Çalıştır
@@ -160,11 +190,13 @@ include __DIR__ . '/header.php';
                 <div style="margin-bottom: 4px; <?php
                     if ($entry['tip'] === 'ok') echo 'color: #86efac;';
                     elseif ($entry['tip'] === 'hata') echo 'color: #fca5a5;';
+                    elseif ($entry['tip'] === 'atlandi') echo 'color: #fde68a;';
                     else echo 'color: #93c5fd;';
                 ?>">
                     <?php
                     if ($entry['tip'] === 'ok') echo '✓';
                     elseif ($entry['tip'] === 'hata') echo '✗';
+                    elseif ($entry['tip'] === 'atlandi') echo 'ℹ';
                     else echo 'ℹ';
                     ?>
                     <?= e($entry['mesaj']) ?>

@@ -1,7 +1,7 @@
 {
-    "version": "1.4.2",
+    "version": "1.4.3",
     "date": "2026-04-17",
-    "notes": "v1.4.2 Migration idempotent iyilestirme - 'zaten yapilmis' hatalari (1060 duplicate column, 1050 table exists, 1061 duplicate key, 1062 duplicate entry) artik 'hata' degil 'atlandi' olarak gosteriliyor. Guncelleme loglari 'X basarili, Y atlandi, Z hatali' formatinda. Kurulum.sql slider tablosuna ust_baslik + sadece_gorsel kolonlari eklendi (yeni kurulumlar icin).",
+    "notes": "v1.4.3 Icerik-yukle migration runner idempotent dusmesi - v1.4.2'de guncelleme.php'deki migration runner duzeltilmisti ama yonetim/icerik-yukle.php'deki ikinci bir runner atlanmisti. Ayni idempotent hata tolerans mantigi bu dosyaya da uygulandi (42S21/42S01/23000/42000 + duplicate pattern'leri 'atlandi' olarak ayrilir). UI'ye atlanan statement sayisi + aciklama metni eklendi, log'da sari renkli ℹ ile ayri gosterim.",
     "files": [
         ".htaccess",
         "404.php",
