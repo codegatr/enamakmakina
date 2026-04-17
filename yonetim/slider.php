@@ -29,20 +29,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['varsayilan_yukle']) &
             'ust_baslik' => 'Duran Üretim Hattı Beklemez',
             'baslik'     => '7/24 Teknik Servis ve Yedek Parça',
             'aciklama'   => 'Yerli yedek parça stoğumuz ve saha servis ekibimiz ile 24-48 saat içinde fabrikanızdayız. Marka bağımsız bakım-onarım.',
-            'gorsel'     => 'uploads/slider/slider-servis.jpg',
+            'gorsel'     => 'uploads/slider/slider-2.svg',
             'buton_metin'=> 'Servis Talep Et',
             'buton_link' => 'hizmetler.php',
-            'sadece_gorsel' => 1,
+            'sadece_gorsel' => 0,
             'sira' => 2,
         ],
         [
             'ust_baslik' => 'Standart Makine Değil, Doğru Makine',
             'baslik'     => 'Projeye Özel Mühendislik',
             'aciklama'   => 'Parça tipi ve üretim kapasitenize göre sıfırdan tasarlanan kumlama çözümleri. 3D CAD, mühendislik hesapları ve FAT dahil.',
-            'gorsel'     => 'uploads/slider/slider-muhendislik.jpg',
+            'gorsel'     => 'uploads/slider/slider-3.svg',
             'buton_metin'=> 'Teklif Al',
             'buton_link' => 'teklif-al.php',
-            'sadece_gorsel' => 1,
+            'sadece_gorsel' => 0,
             'sira' => 3,
         ],
     ];
@@ -141,7 +141,7 @@ include 'header.php';
     <h2>Slider (<?= count($liste) ?>)</h2>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <?php if (count($liste) === 0): ?>
-            <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (Endüstriyel Kumlama, 7/24 Servis, Projeye Özel Mühendislik) eklenecek. Devam edilsin mi?');">
+            <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (SVG illüstrasyon görselleri ile) eklenecek. Devam edilsin mi?');">
                 <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
                 <input type="hidden" name="varsayilan_yukle" value="1">
                 <button class="btn btn-outline">
@@ -184,7 +184,7 @@ include 'header.php';
             <h3 style="color:var(--text); margin-bottom:6px;">Slider kaydı yok</h3>
             <p style="color:var(--text-3); margin-bottom:20px;">Yeni slayt ekleyebilir veya hazır 3 varsayılan slider ile başlayabilirsiniz.</p>
             <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-                <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (Endüstriyel Kumlama, 7/24 Servis, Projeye Özel Mühendislik) eklenecek. Devam edilsin mi?');">
+                <form method="post" style="display:inline;" onsubmit="return confirm('3 adet varsayılan slider (SVG illüstrasyon görselleri ile) eklenecek. Devam edilsin mi?');">
                     <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
                     <input type="hidden" name="varsayilan_yukle" value="1">
                     <button class="btn btn-primary">Varsayılan Sliderları Yükle (3 adet)</button>

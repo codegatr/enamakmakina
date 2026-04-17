@@ -1,7 +1,7 @@
 {
-    "version": "1.4.6",
+    "version": "1.4.7",
     "date": "2026-04-17",
-    "notes": "v1.4.6 Slider yonetiminde 'Varsayilan Sliderlari Yukle' butonu - 3 hazir slider kaydini tek tiklama ile geri yuklemek icin (Endustriyel Kumlama + 7/24 Servis + Projeye Ozel Muhendislik). Slider silindikten sonra empty state'te buyuk 'Yukle' butonu ve icon gorulur. Mevcut kayitlar varken de header'da kucuk versiyonu vardir (ama sadece liste bostayken).",
+    "notes": "v1.4.7 Slider 'Varsayilan Yukle' butonu SVG illustrasyonlara donduruldu - onceki sürüm 2 ve 3. sliderlari ChatGPT JPG + sadece_gorsel modda yukluyordu. Kullanici SVG'leri istedi. Artik 3 slider da SVG illustrasyonu ile + normal mod (metin overlay CSS ile gosteriliyor): slider-1.svg (Endustriyel Kumlama), slider-2.svg (7/24 Servis), slider-3.svg (Projeye Ozel Muhendislik). Metinler slider-2.svg + slider-3.svg icin CSS overlay'den gosterilir.",
     "files": [
         ".htaccess",
         "404.php",
