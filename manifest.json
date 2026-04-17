@@ -1,7 +1,7 @@
 {
-    "version": "1.3.1",
+    "version": "1.3.2",
     "date": "2026-04-17",
-    "notes": "v1.3.1 Hotfix - Gercek logo entegrasyonu (PDF'den cikarilan marka kimligi: cember+E, ENA-MAK, KUMLAMA). Header ve footer yeni logo.svg/logo-white.svg kullaniyor. Migration multi-statement parser eklendi - v1.3.0 migration'i artik dogru calisacak. Kullanicilar bu guncellemeyi aldigi anda icerik otomatik dolacak.",
+    "notes": "v1.3.2 - Kategori ve urun gorsellerı isometric 3D profesyonel tarzinda yeniden tasarlandi. Metalik govdeli, gradient katmanli, detayli turbin, kontrol paneli ve taban golgesi ile teknik katalog cizim havasi. Kartoon stilinden kurumsal gorunume gecis.",
     "files": [
         "index.php",
         "urunler.php",
