@@ -49,6 +49,7 @@ $gsc = ayar('google_search_console');
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="<?= e(resim_url(ayar('favicon', 'assets/img/favicon.svg'))) ?>">
+<link rel="alternate icon" href="<?= e(SITE_URL) ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?= e(resim_url(ayar('favicon', 'assets/img/favicon.svg'))) ?>">
 
 <!-- Google Fonts -->

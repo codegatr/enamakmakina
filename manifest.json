@@ -1,7 +1,7 @@
 {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "date": "2026-04-17",
-    "notes": "v1.1.1 - .htaccess hotfix: update.php blok listesinden çıkarıldı (admin panelden güncelleme 403 veriyordu)",
+    "notes": "v1.1.2 - update.php kaldırıldı (guncelleme.php self-post), favicon.ico eklendi (tarayıcı 404'ünü önler), header.php favicon alternate rel",
     "files": [
         "index.php",
         "urunler.php",
@@ -24,7 +24,6 @@
         "functions.php",
         "header.php",
         "footer.php",
-        "update.php",
         "manifest.json",
         "yonetim/index.php",
         "yonetim/header.php",
@@ -56,7 +55,8 @@
         "assets/img/logo-white.svg",
         "assets/img/favicon.svg",
         "assets/img/og-image.svg",
-        "assets/img/placeholder.svg"
+        "assets/img/placeholder.svg",
+        "favicon.ico"
     ],
     "migrations": []
 }
