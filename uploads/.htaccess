@@ -1,0 +1,10 @@
+# Güvenlik - PHP dosyalarının çalışmasını engelle
+<Files *.php>
+    Order allow,deny
+    Deny from all
+</Files>
+<FilesMatch "\.(php|phtml|phar|inc)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+Options -ExecCGI -Indexes

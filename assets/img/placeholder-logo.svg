@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <rect width="200" height="100" fill="#f3f4f6"/>
+  <g transform="translate(100, 50)">
+    <circle r="18" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <path d="M -8 -8 L 8 8 M 8 -8 L -8 8" stroke="#9ca3af" stroke-width="2"/>
+  </g>
+  <text x="100" y="82" font-family="Inter, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">LOGO YOK</text>
+</svg>

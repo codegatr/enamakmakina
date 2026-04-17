@@ -1,0 +1,23 @@
+# Config ve güvenli dosyalar
+config.php
+.installed
+
+# Upload dosyaları (sadece klasör yapısı takip edilsin)
+uploads/*
+!uploads/.gitkeep
+!uploads/*/
+uploads/*/*
+!uploads/*/.gitkeep
+!uploads/.htaccess
+
+# Updates (backup dosyaları)
+updates/*
+!updates/.gitkeep
+
+# Sistem / editör
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.swp

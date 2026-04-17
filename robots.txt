@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /yonetim/
+Disallow: /install.php
+Disallow: /update.php
+Disallow: /config.php
+Disallow: /functions.php
+Disallow: /header.php
+Disallow: /footer.php
+Disallow: /migrations/
+Disallow: /updates/
+
+Sitemap: https://enamakmakina.com/sitemap.php
