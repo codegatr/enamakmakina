@@ -57,7 +57,7 @@ INSERT INTO urun_kategoriler (id, ad, slug, aciklama, gorsel, aktif, sira) VALUE
 -- =====================================================================
 -- ÜRÜNLER (14 adet, her kategoriden örnekler)
 -- =====================================================================
-INSERT INTO urunler (kategori_id, ad, slug, kisa_aciklama, aciklama, gorsel, model, ozellikler, aktif, one_cikan, sira) VALUES
+INSERT INTO urunler (kategori_id, ad, slug, kisa_aciklama, aciklama, gorsel, model_kodu, teknik_ozellikler, aktif, one_cikan, sira) VALUES
 
 -- Askılı (kategori_id=1)
 (1, 'AK-100 Askılı Kumlama Makinesi', 'ak-100-askili-kumlama-makinesi',
@@ -209,30 +209,27 @@ INSERT INTO hizmetler (ad, slug, kisa_aciklama, aciklama, gorsel, ikon, aktif, s
 -- =====================================================================
 -- SLIDER (3 slayt)
 -- =====================================================================
-INSERT INTO slider (baslik, ust_baslik, aciklama, gorsel, buton_yazi, buton_link, buton2_yazi, buton2_link, aktif, sira) VALUES
+INSERT INTO slider (ust_baslik, baslik, aciklama, gorsel, buton_metin, buton_link, aktif, sira) VALUES
 
-('Endüstriyel Kumlama Sistemleri',
- 'Yerli Mühendislik, Yüksek Kalite',
+('Yerli Mühendislik, Yüksek Kalite',
+ 'Endüstriyel Kumlama Sistemleri',
  'Askılı, tamburlu, basınçlı ve tünel tipi kumlama makineleri. Projeye özel tasarım, fabrika kabul testi ve sahada devreye alma.',
  'uploads/slider/slider-1.svg',
  'Ürünlerimizi İnceleyin', 'urunler.php',
- 'Teklif Al', 'teklif-al.php',
  1, 1),
 
-('7/24 Teknik Servis ve Yedek Parça',
- 'Duran Üretim Hattı Beklemez',
+('Duran Üretim Hattı Beklemez',
+ '7/24 Teknik Servis ve Yedek Parça',
  'Yerli yedek parça stoğumuz ve saha servis ekibimiz ile 24-48 saat içinde fabrikanızdayız. Marka bağımsız bakım-onarım.',
  'uploads/slider/slider-2.svg',
  'Servis Talep Et', 'teklif-al.php',
- 'Teklif Al', 'teklif-al.php',
  1, 2),
 
-('Projeye Özel Mühendislik',
- 'Standart Makine Değil, Doğru Makine',
+('Standart Makine Değil, Doğru Makine',
+ 'Projeye Özel Mühendislik',
  'Parça tipi ve üretim kapasitenize göre sıfırdan tasarlanan kumlama çözümleri. 3D CAD, mühendislik hesapları ve FAT dahil.',
  'uploads/slider/slider-3.svg',
  'Teklif Alın', 'teklif-al.php',
- 'Hakkımızda', 'hakkimizda.php',
  1, 3);
 
 -- =====================================================================

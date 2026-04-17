@@ -1,7 +1,7 @@
 {
     "version": "1.3.4",
     "date": "2026-04-17",
-    "notes": "v1.3.4 - Icerik Yukleme Araci: Migration calismadigi durumlar icin admin panelde manuel icerik yukleme sayfasi (yonetim/icerik-yukle.php). Tablo durumlari gosteriliyor, butonla migration SQL'i parse edilip tek tek calistiriliyor, her statement icin detayli log renkli goruntuleniyor. Yonetim sidebar'a kisayol eklendi.",
+    "notes": "v1.3.4 Migration schema fix - Onceki migration'daki urunler INSERT 'model' ve 'ozellikler' kolonlarini kullaniyordu, gercek schema 'model_kodu' ve 'teknik_ozellikler'. Slider'da 'buton_yazi' vardi, gercek 'buton_metin'. Bu yuzden urunler ve slider bos kaliyordu. Duzeltildi, guncellemeden sonra migration tekrar calisacak ve 15/15 basarili olacak.",
     "files": [
         "index.php",
         "urunler.php",
