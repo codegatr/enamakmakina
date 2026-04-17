@@ -96,25 +96,8 @@ $gsc = ayar('google_search_console');
 <!-- Site Header -->
 <header class="site-header" id="siteHeader">
     <div class="container">
-        <a href="<?= e(SITE_URL) ?>/" class="logo">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <defs>
-                    <linearGradient id="enamakLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#1e40af"/>
-                        <stop offset="100%" stop-color="#1e3a8a"/>
-                    </linearGradient>
-                </defs>
-                <rect x="0" y="0" width="44" height="44" rx="9" fill="url(#enamakLogoBg)"/>
-                <circle cx="22" cy="22" r="14" fill="none" stroke="#ffffff" stroke-width="2"/>
-                <rect x="15.5" y="14" width="12" height="2.4" rx="0.5" fill="#fff"/>
-                <rect x="15.5" y="20.8" width="9" height="2.4" rx="0.5" fill="#fff"/>
-                <rect x="15.5" y="27.6" width="12" height="2.4" rx="0.5" fill="#fff"/>
-                <rect x="15.5" y="14" width="2.4" height="16" rx="0.5" fill="#fff"/>
-            </svg>
-            <div class="logo-text">
-                <span>ENA-MAK<span class="accent">.</span></span>
-                <small class="logo-sub">Kumlama Teknolojileri</small>
-            </div>
+        <a href="<?= e(SITE_URL) ?>/" class="logo logo-real" aria-label="ENA-MAK Kumlama Teknolojileri">
+            <img src="<?= e(SITE_URL) ?>/assets/img/logo.svg" alt="ENA-MAK Kumlama" width="230" height="70">
         </a>
 
         <nav class="main-nav" aria-label="Ana menü">

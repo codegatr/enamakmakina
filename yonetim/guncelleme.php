@@ -154,14 +154,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['islem'] ?? '') === 'guncel
                     $log_ekle('Veritabanı migrasyonları çalıştırılıyor...');
                     foreach ($manifest['migrations'] as $mig) {
                         $mig_file = $kok . '/' . ltrim($mig, '/');
-                        if (file_exists($mig_file)) {
+                        if (!file_exists($mig_file)) {
+                            $log_ekle('Migration dosyası bulunamadı: ' . $mig);
+                            continue;
+                        }
+                        $sql_raw = file_get_contents($mig_file);
+                        // Yorum satirlarini temizle (-- ile baslayan tam satirlar)
+                        $sql_lines = explode("\n", $sql_raw);
+                        $sql_clean = '';
+                        foreach ($sql_lines as $ln) {
+                            $t = trim($ln);
+                            if ($t === '' || strpos($t, '--') === 0) continue;
+                            $sql_clean .= $ln . "\n";
+                        }
+                        // ; ile statement'lere bol (string icindeki ; degil, satir sonundaki)
+                        $statements = preg_split('/;\s*\n/', $sql_clean);
+                        $ok = 0; $fail = 0;
+                        foreach ($statements as $stmt) {
+                            $stmt = trim($stmt, " \n\r\t;");
+                            if ($stmt === '') continue;
                             try {
-                                $pdo->exec(file_get_contents($mig_file));
-                                $log_ekle('Migration: ' . basename($mig));
+                                $pdo->exec($stmt);
+                                $ok++;
                             } catch (Exception $e) {
-                                $log_ekle('Migration hatası: ' . $e->getMessage());
+                                $fail++;
+                                $log_ekle('  Statement hatasi: ' . substr($e->getMessage(), 0, 150));
                             }
                         }
+                        $log_ekle('Migration: ' . basename($mig) . ' - ' . $ok . ' basarili, ' . $fail . ' hatali');
                     }
                 }
 

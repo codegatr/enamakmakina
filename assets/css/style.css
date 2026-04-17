@@ -2812,3 +2812,36 @@ select.form-control {
     .corp-stat-num { font-size: 36px; }
     .corp-stat-big { padding: 24px 18px; }
 }
+
+/* =========================================================
+   37. GERÇEK LOGO (PDF'den çıkarılan marka kimliği)
+========================================================= */
+.logo.logo-real {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+}
+.logo.logo-real img {
+    height: 54px;
+    width: auto;
+    display: block;
+    transition: opacity .2s;
+}
+.logo.logo-real:hover img { opacity: 0.85; }
+
+/* Footer logo beyaz versiyonu */
+.footer-about .logo.logo-real img {
+    height: 48px;
+}
+
+/* Site header'da daha kompakt */
+.site-header .logo.logo-real img {
+    height: 50px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .logo.logo-real img { height: 40px; }
+    .site-header .logo.logo-real img { height: 40px; }
+}

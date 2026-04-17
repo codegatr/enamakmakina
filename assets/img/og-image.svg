@@ -1,39 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0b0d"/>
-      <stop offset="50%" stop-color="#14161a"/>
-      <stop offset="100%" stop-color="#1a1d23"/>
-    </linearGradient>
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#1e40af"/>
+    <linearGradient id="ogbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
-
-  <!-- Decorative -->
-  <circle cx="1050" cy="100" r="250" fill="#2563eb" opacity="0.08"/>
-  <circle cx="100" cy="550" r="200" fill="#2563eb" opacity="0.05"/>
-
-  <!-- Logo ikonu büyük -->
-  <g transform="translate(140, 240)">
-    <rect x="0" y="0" width="130" height="130" rx="22" fill="url(#blueGrad)"/>
-    <circle cx="65" cy="65" r="42" fill="none" stroke="#ffffff" stroke-width="5"/>
-    <g fill="#ffffff">
-      <rect x="46" y="40" width="36" height="7" rx="1.2"/>
-      <rect x="46" y="61.5" width="28" height="7" rx="1.2"/>
-      <rect x="46" y="83" width="36" height="7" rx="1.2"/>
-      <rect x="46" y="40" width="7" height="50" rx="1.2"/>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="150" r="200" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="950" cy="480" r="150" fill="#1e40af" opacity="0.2"/>
+  <!-- Logo centered -->
+  <g transform="translate(150, 180)">
+    <g transform="translate(130, 130)">
+      <circle r="115" fill="none" stroke="#ffffff" stroke-width="14"/>
+      <circle r="95" fill="none" stroke="#60a5fa" stroke-width="4"/>
+      <g fill="#ffffff">
+        <rect x="-35" y="-55" width="20" height="110" rx="2"/>
+        <rect x="-35" y="-55" width="72" height="18" rx="2"/>
+        <rect x="-35" y="-10" width="56" height="16" rx="2"/>
+        <rect x="-35" y="38" width="72" height="18" rx="2"/>
+      </g>
     </g>
+    <text x="310" y="130" font-family="'Archivo', sans-serif" font-size="110" font-weight="900" fill="#ffffff" letter-spacing="-3">ENA-MAK</text>
+    <text x="315" y="210" font-family="'Archivo', sans-serif" font-size="58" font-weight="800" fill="#93c5fd" letter-spacing="8">KUMLAMA TEKNOLOJİLERİ</text>
   </g>
-
-  <!-- Text -->
-  <text x="310" y="300" font-family="'Space Grotesk', Arial, sans-serif" font-size="78" font-weight="800" fill="#ffffff" letter-spacing="-2">ENA-MAK</text>
-  <text x="310" y="370" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" fill="#60a5fa">Kumlama Teknolojileri</text>
-  <text x="310" y="420" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="400" fill="#9ca3af">Endüstriyel Kumlama Makinaları · Bakım · Yedek Parça</text>
-
-  <rect x="140" y="530" width="300" height="4" fill="url(#blueGrad)"/>
-  <text x="140" y="580" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#cbd5e1">enamakmakina.com</text>
-  <text x="980" y="580" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#6b7280">KONYA · TÜRKİYE</text>
+  <!-- Sub-tagline -->
+  <text x="600" y="530" font-family="'DM Sans', sans-serif" font-size="32" font-weight="500" fill="#cbd5e1" text-anchor="middle">Endüstriyel Kumlama Makineleri &middot; Konya</text>
 </svg>
