@@ -1,7 +1,7 @@
 {
-    "version": "1.1.2",
+    "version": "1.2.0",
     "date": "2026-04-17",
-    "notes": "v1.1.2 - update.php kaldırıldı (guncelleme.php self-post), favicon.ico eklendi (tarayıcı 404'ünü önler), header.php favicon alternate rel",
+    "notes": "v1.2.0 - Light industrial theme: Archivo + DM Sans tipografi, beyaz/açık gri zemin, mavi (#1e40af, #2563eb) vurgu. Frontend ve admin paneli komple yeniden yazıldı. Tüm 195 class için tutarlı stil sistemi.",
     "files": [
         "index.php",
         "urunler.php",
