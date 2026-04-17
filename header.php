@@ -20,7 +20,7 @@ $gsc = ayar('google_search_console');
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0a0b0d">
+<meta name="theme-color" content="#1e40af">
 <title><?= e($sayfa_baslik) ?></title>
 <meta name="description" content="<?= e($sayfa_aciklama) ?>">
 <meta name="keywords" content="<?= e($sayfa_anahtar) ?>">
@@ -97,13 +97,22 @@ $gsc = ayar('google_search_console');
 <header class="site-header" id="siteHeader">
     <div class="container">
         <a href="<?= e(SITE_URL) ?>/" class="logo">
-            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="2" y="2" width="38" height="38" rx="8" fill="#ff6b1a"/>
-                <path d="M12 14h18v4H12zM12 20h18v2H12zM12 24h14v4H12z" fill="#fff"/>
-                <circle cx="30" cy="26" r="2" fill="#fff"/>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="enamakLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e40af"/>
+                        <stop offset="100%" stop-color="#1e3a8a"/>
+                    </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="44" height="44" rx="9" fill="url(#enamakLogoBg)"/>
+                <circle cx="22" cy="22" r="14" fill="none" stroke="#ffffff" stroke-width="2"/>
+                <rect x="15.5" y="14" width="12" height="2.4" rx="0.5" fill="#fff"/>
+                <rect x="15.5" y="20.8" width="9" height="2.4" rx="0.5" fill="#fff"/>
+                <rect x="15.5" y="27.6" width="12" height="2.4" rx="0.5" fill="#fff"/>
+                <rect x="15.5" y="14" width="2.4" height="16" rx="0.5" fill="#fff"/>
             </svg>
             <div class="logo-text">
-                <span>ENAMAK<span class="accent">.</span></span>
+                <span>ENA-MAK<span class="accent">.</span></span>
                 <small class="logo-sub">Kumlama Teknolojileri</small>
             </div>
         </a>

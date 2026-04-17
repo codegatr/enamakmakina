@@ -1,7 +1,7 @@
 {
-    "version": "1.2.0",
+    "version": "1.2.1",
     "date": "2026-04-17",
-    "notes": "v1.2.0 - Light industrial theme: Archivo + DM Sans tipografi, beyaz/açık gri zemin, mavi (#1e40af, #2563eb) vurgu. Frontend ve admin paneli komple yeniden yazıldı. Tüm 195 class için tutarlı stil sistemi.",
+    "notes": "v1.2.1 hotfix - Header ve footer inline SVG logolari turuncu hardcoded kalmisti, mavi gradient'e guncellendi. theme-color meta tag mavi markaya uyarlandi.",
     "files": [
         "index.php",
         "urunler.php",
