@@ -36,25 +36,30 @@ include 'header.php';
 <section class="hero-slider" aria-label="Ana Sayfa Slider">
     <div class="slider-wrap">
         <?php foreach ($slider as $i => $s): ?>
-        <div class="slide <?= $i === 0 ? 'active' : '' ?>" <?= $s['gorsel'] ? 'style="background-image: url(\'' . e(resim_url($s['gorsel'])) . '\')"' : '' ?>>
-            <div class="slide-overlay"></div>
-            <div class="container slide-inner">
-                <div class="slide-content">
-                    <?php if (!empty($s['ust_baslik'])): ?>
-                        <span class="slide-eyebrow"><?= e($s['ust_baslik']) ?></span>
-                    <?php endif; ?>
-                    <h1 class="slide-title"><?= e($s['baslik']) ?></h1>
-                    <?php if (!empty($s['aciklama'])): ?>
-                        <p class="slide-desc"><?= e($s['aciklama']) ?></p>
-                    <?php endif; ?>
-                    <div class="slide-actions">
-                        <?php if (!empty($s['buton_link'])): ?>
-                            <a href="<?= e($s['buton_link']) ?>" class="btn btn-primary btn-lg"><?= e($s['buton_metin'] ?: 'Detaylı Bilgi') ?></a>
+        <?php $sadece_gorsel = !empty($s['sadece_gorsel']); ?>
+        <div class="slide <?= $i === 0 ? 'active' : '' ?> <?= $sadece_gorsel ? 'slide-image-only' : '' ?>" <?= $s['gorsel'] ? 'style="background-image: url(\'' . e(resim_url($s['gorsel'])) . '\')"' : '' ?>>
+            <?php if ($sadece_gorsel && !empty($s['buton_link'])): ?>
+                <a href="<?= e($s['buton_link']) ?>" class="slide-full-link" aria-label="<?= e($s['baslik'] ?: 'Detay') ?>"></a>
+            <?php elseif (!$sadece_gorsel): ?>
+                <div class="slide-overlay"></div>
+                <div class="container slide-inner">
+                    <div class="slide-content">
+                        <?php if (!empty($s['ust_baslik'])): ?>
+                            <span class="slide-eyebrow"><?= e($s['ust_baslik']) ?></span>
                         <?php endif; ?>
-                        <a href="teklif-al.php" class="btn btn-outline btn-lg">Teklif Al</a>
+                        <h1 class="slide-title"><?= e($s['baslik']) ?></h1>
+                        <?php if (!empty($s['aciklama'])): ?>
+                            <p class="slide-desc"><?= e($s['aciklama']) ?></p>
+                        <?php endif; ?>
+                        <div class="slide-actions">
+                            <?php if (!empty($s['buton_link'])): ?>
+                                <a href="<?= e($s['buton_link']) ?>" class="btn btn-primary btn-lg"><?= e($s['buton_metin'] ?: 'Detaylı Bilgi') ?></a>
+                            <?php endif; ?>
+                            <a href="teklif-al.php" class="btn btn-outline btn-lg">Teklif Al</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
         <?php endforeach; ?>
     </div>

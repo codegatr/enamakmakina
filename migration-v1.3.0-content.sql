@@ -794,3 +794,36 @@ INSERT INTO sayfalar (baslik, slug, icerik, meta_baslik, meta_aciklama, aktif) V
  'Çerez Politikası - Enamak Makina',
  'Web sitemizdeki çerezler, türleri (zorunlu, işlevsel, analiz, pazarlama), amaçları ve nasıl yöneteceğiniz hakkında bilgi.',
  1);
+
+-- =====================================================================
+-- SLIDER GÖRSELE ÖZEL MOD (v1.4.1)
+-- sadece_gorsel=1 → metin/buton overlay olmadan tam clickable banner
+-- =====================================================================
+
+-- Kolon eklenmemişse ekle (try-catch parser safely)
+ALTER TABLE slider ADD COLUMN sadece_gorsel TINYINT(1) DEFAULT 0;
+
+-- Slider 2 (Servis) — görsel değişti, mod=sadece_gorsel
+UPDATE slider SET
+    gorsel = 'uploads/slider/slider-servis.jpg',
+    sadece_gorsel = 1,
+    buton_link = 'hizmetler.php',
+    sira = 2
+WHERE sira = 2 OR baslik LIKE '%Servis%' OR baslik LIKE '%7/24%' OR baslik LIKE '%Yedek Parça%';
+
+-- Slider 3 (Mühendislik) — görsel değişti, mod=sadece_gorsel
+UPDATE slider SET
+    gorsel = 'uploads/slider/slider-muhendislik.jpg',
+    sadece_gorsel = 1,
+    buton_link = 'teklif-al.php',
+    sira = 3
+WHERE sira = 3 OR baslik LIKE '%Mühendislik%' OR baslik LIKE '%Proje%';
+
+-- Eğer slider 2 veya 3 yoksa oluştur (yalnızca aktif 1 slider varsa)
+INSERT INTO slider (ust_baslik, baslik, aciklama, gorsel, buton_metin, buton_link, aktif, sira, sadece_gorsel)
+SELECT '', '7/24 Teknik Servis', '', 'uploads/slider/slider-servis.jpg', '', 'hizmetler.php', 1, 2, 1
+WHERE NOT EXISTS (SELECT 1 FROM slider WHERE sira = 2);
+
+INSERT INTO slider (ust_baslik, baslik, aciklama, gorsel, buton_metin, buton_link, aktif, sira, sadece_gorsel)
+SELECT '', 'Projeye Özel Mühendislik', '', 'uploads/slider/slider-muhendislik.jpg', '', 'teklif-al.php', 1, 3, 1
+WHERE NOT EXISTS (SELECT 1 FROM slider WHERE sira = 3);

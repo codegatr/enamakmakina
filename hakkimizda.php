@@ -54,6 +54,20 @@ include 'header.php';
     </div>
 </section>
 
+<!-- SİSTEM BİLEŞENLERİ BANNER -->
+<section class="sistem-banner-section">
+    <div class="container">
+        <div class="sistem-banner-head">
+            <span class="section-eyebrow">SİSTEMLERİMİZ</span>
+            <h2>Uçtan uca endüstriyel kumlama çözümleri</h2>
+            <p>Kumlama kabininden toz toplama sistemine, kontrol panelinden abrasif ekipmana kadar tüm bileşenleri tek çatı altında mühendislik düzeninde tasarlıyor ve üretiyoruz.</p>
+        </div>
+        <div class="sistem-banner-image">
+            <img src="uploads/hakkimizda/sistem-bilesenleri.jpg" alt="Enamak Makina Endüstriyel Kumlama Sistemleri - Sistem Bileşenleri ve Uygulama Alanları" loading="lazy">
+        </div>
+    </div>
+</section>
+
 <!-- HİKAYE -->
 <section class="section">
     <div class="container">

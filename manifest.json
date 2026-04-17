@@ -1,7 +1,7 @@
 {
-    "version": "1.4.0",
+    "version": "1.4.1",
     "date": "2026-04-17",
-    "notes": "v1.4.0 Hukuki sayfalar iceriklendirildi - KVKK 6698 kapsaminda kapsamli 3 hukuki sayfa: KVKK Aydinlatma Metni (10 bolum, 8400 karakter), Gizlilik Politikasi (11 bolum, 5000 karakter), Cerez Politikasi (9 bolum, 5900 karakter). Veri kategorileri, isleme amaclari, hukuki sebepler, aktarim, saklama sureleri, ilgili kisi haklari (KVKK Madde 11), cerez turleri tablo ile sektore ozel. KVKK 2026/347 ilke karari ve 2026 mevzuat uyumlu. CSS'e 200+ satir hukuki sayfa stili (legal-meta, legal-table, legal-foot, lead + h2/h3 hiyerarsi).",
+    "notes": "v1.4.1 Gorsel icerik guncellemeleri - 2 profesyonel ChatGPT uretmen slider gorseli eklendi (7/24 Servis + Projeye Ozel Muhendislik). Slider icin yeni 'sadece_gorsel' modu: gorseldeki metin+buton kompozisyonu bozulmasin diye CSS overlay kaldiriliyor, tamami clickable banner oluyor. Hakkimizda sayfasina 'Sistem Bilesenleri' infografik banner eklendi (Enduustriyel Kumlama Sistemleri). ALTER TABLE slider.sadece_gorsel, UPDATE kayitlari, 3 yeni gorsel dosyasi (toplam ~900KB optimize jpg progressive).",
     "files": [
         ".htaccess",
         "404.php",
@@ -95,7 +95,10 @@
         "yonetim/slider.php",
         "yonetim/sss.php",
         "yonetim/teklifler.php",
-        "yonetim/urunler.php"
+        "yonetim/urunler.php",
+        "uploads/slider/slider-servis.jpg",
+        "uploads/slider/slider-muhendislik.jpg",
+        "uploads/hakkimizda/sistem-bilesenleri.jpg"
     ],
     "migrations": [
         "migration-v1.3.0-content.sql"
