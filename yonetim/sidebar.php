@@ -95,6 +95,10 @@ function aktif_class($s, $mevcut) {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9A9 9 0 0 1 18.36 5.64L23 10M1 14L5.64 18.36A9 9 0 0 0 20.49 15"/></svg>
                 Güncelleme
             </a>
+            <a href="icerik-yukle.php" class="nav-link <?= aktif_class('icerik-yukle', $mevcut) ?>" style="color:#f59e0b;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                İçerik Yükle
+            </a>
             <?php endif; ?>
         </div>
     </nav>
