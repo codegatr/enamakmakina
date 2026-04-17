@@ -1,7 +1,7 @@
 {
-    "version": "1.3.9",
+    "version": "1.4.0",
     "date": "2026-04-17",
-    "notes": "v1.3.9 Kurumsal sayfa iyilestirmeleri - iletisim.php ve hizmetler.php tamamen yeniden yazildi, hakkimizda.php'ye sertifika bolumu eklendi. Iletisim'de 4 hizli kanal karti + departman listesi + sosyal medya + harita head. Hizmetler'de hero + istatistik + 5 adim surec + 6 avantaj karti + numaralandirma. Hakkimizda'da 6 kalite/sertifika karti (CE, ISO 8501-1, Manganli Celik, FAT, TSE, 2 Yil Garanti). CSS'e 650+ satir eklendi.",
+    "notes": "v1.4.0 Hukuki sayfalar iceriklendirildi - KVKK 6698 kapsaminda kapsamli 3 hukuki sayfa: KVKK Aydinlatma Metni (10 bolum, 8400 karakter), Gizlilik Politikasi (11 bolum, 5000 karakter), Cerez Politikasi (9 bolum, 5900 karakter). Veri kategorileri, isleme amaclari, hukuki sebepler, aktarim, saklama sureleri, ilgili kisi haklari (KVKK Madde 11), cerez turleri tablo ile sektore ozel. KVKK 2026/347 ilke karari ve 2026 mevzuat uyumlu. CSS'e 200+ satir hukuki sayfa stili (legal-meta, legal-table, legal-foot, lead + h2/h3 hiyerarsi).",
     "files": [
         ".htaccess",
         "404.php",

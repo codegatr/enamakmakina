@@ -464,3 +464,333 @@ INSERT INTO bloglar (baslik, slug, kategori, yazar, ozet, icerik, gorsel, meta_b
  'Aylık Bakım Kontrol Listesi — Kumlama Makinesi',
  '12 maddelik aylık bakım rehberi: türbin, astar, filtre, elevatör kontrolü. Makinenizin ömrünü uzatın.',
  DATE_SUB(NOW(), INTERVAL 28 DAY), 1);
+
+-- =====================================================================
+-- HUKUKI SAYFALAR: KVKK + Gizlilik + Çerez Politikası
+-- =====================================================================
+DELETE FROM sayfalar WHERE slug IN ('kvkk', 'gizlilik-politikasi', 'cerez-politikasi');
+
+INSERT INTO sayfalar (baslik, slug, icerik, meta_baslik, meta_aciklama, aktif) VALUES
+('KVKK Aydınlatma Metni', 'kvkk',
+ '<div class="legal-meta"><strong>Veri Sorumlusu:</strong> Enamak Makina<br><strong>Adres:</strong> Organize Sanayi Bölgesi, Konya / Türkiye<br><strong>Telefon:</strong> +90 542 510 36 16<br><strong>E-posta:</strong> info@enamakmakina.com<br><strong>Son Güncelleme:</strong> 17 Nisan 2026</div>
+
+<p class="lead">Enamak Makina (&#8220;Şirket&#8221;) olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (&#8220;KVKK&#8221;) uyarınca veri sorumlusu sıfatıyla işlediğimiz kişisel verileriniz hakkında sizi aydınlatmak isteriz. İşbu aydınlatma metni, Kanunun 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ çerçevesinde hazırlanmıştır.</p>
+
+<h2>1. Veri Sorumlusunun Kimliği</h2>
+<p>6698 sayılı Kanun kapsamında kişisel verileriniz, &#8220;veri sorumlusu&#8221; sıfatıyla <strong>Enamak Makina</strong> tarafından aşağıda açıklanan kapsamda işlenmektedir.</p>
+<ul><li><strong>Ticari Unvan:</strong> Enamak Makina</li><li><strong>Faaliyet Alanı:</strong> Endüstriyel kumlama makineleri imalatı, satışı, satış sonrası servis ve yedek parça</li><li><strong>Adres:</strong> Organize Sanayi Bölgesi, Konya / Türkiye</li><li><strong>Web:</strong> https://enamakmakina.com</li></ul>
+
+<h2>2. İşlenen Kişisel Veri Kategorileri</h2>
+<p>Aşağıdaki kişisel veri kategorileri, iş ilişkimizin kapsamına göre işlenebilir:</p>
+<table class="legal-table"><thead><tr><th>Kategori</th><th>Örnek Veriler</th></tr></thead>
+<tbody>
+<tr><td><strong>Kimlik Bilgisi</strong></td><td>Ad, soyad, ünvan, T.C. kimlik numarası (fatura gereğinde)</td></tr>
+<tr><td><strong>İletişim Bilgisi</strong></td><td>E-posta adresi, telefon, adres, firma bilgisi</td></tr>
+<tr><td><strong>Müşteri İşlem Bilgisi</strong></td><td>Teklif talebi, sipariş detayları, fatura bilgileri, ödeme kayıtları</td></tr>
+<tr><td><strong>Teknik Bilgi</strong></td><td>Proje gereksinimleri, parça boyutu, üretim kapasitesi talepleri, mevcut makine envanteri</td></tr>
+<tr><td><strong>İşlem Güvenliği</strong></td><td>IP adresi, tarayıcı bilgisi, log kayıtları, çerez verileri</td></tr>
+<tr><td><strong>Finans Bilgisi</strong></td><td>Vergi dairesi, VKN, banka hesabı (sözleşme gereği)</td></tr>
+<tr><td><strong>Pazarlama Bilgisi</strong></td><td>Bülten aboneliği, etkinlik katılımı, ilgi alanı (açık rıza halinde)</td></tr>
+</tbody></table>
+
+<h2>3. Kişisel Verilerin İşlenme Amaçları</h2>
+<p>Kişisel verileriniz, aşağıda belirtilen amaçlarla işlenmektedir:</p>
+<ol>
+<li>Teklif, sipariş ve sözleşme süreçlerinin yürütülmesi</li>
+<li>Mal ve hizmet satış sonrası destek hizmetlerinin yürütülmesi (servis, bakım, yedek parça)</li>
+<li>İletişim ve müşteri ilişkileri yönetimi, talep ve şikayetlerin karşılanması</li>
+<li>Finans ve muhasebe işlerinin yürütülmesi (fatura, tahsilat)</li>
+<li>Yasal yükümlülüklerin yerine getirilmesi (vergi, SGK, tüketici mevzuatı)</li>
+<li>Web sitesi ziyaretçi kayıtlarının güvenlik gerekçesiyle tutulması</li>
+<li>Saklama ve arşiv faaliyetlerinin yürütülmesi</li>
+<li>Açık rıza olması halinde pazarlama, kampanya ve etkinlik iletişimi</li>
+</ol>
+
+<h2>4. Kişisel Verilerin İşlenmesinin Hukuki Sebebi</h2>
+<p>Kişisel verileriniz, KVKK Madde 5/2 kapsamında aşağıdaki hukuki sebeplerden biri veya daha fazlasına dayanarak işlenir:</p>
+<ul>
+<li><strong>(a) Kanunlarda açıkça öngörülmesi</strong> — Vergi Usul Kanunu, Türk Ticaret Kanunu, Tüketicinin Korunması Hakkında Kanun</li>
+<li><strong>(c) Sözleşmenin ifası</strong> — Teklif onayı sonrası makine imalatı ve teslimatı</li>
+<li><strong>(ç) Veri sorumlusunun hukuki yükümlülüğü</strong> — Fatura düzenleme, garanti belgesi</li>
+<li><strong>(e) Hakkın tesisi veya korunması</strong> — Sözleşmeden doğan uyuşmazlıklarda delil</li>
+<li><strong>(f) Meşru menfaat</strong> — Web sitesi güvenliği, müşteri ilişkilerinin sürdürülmesi</li>
+</ul>
+<p>Pazarlama iletişimleri ve zorunlu olmayan çerezler için <strong>açık rızanız</strong> (Madde 5/1) alınır; her zaman geri çekebilirsiniz.</p>
+
+<h2>5. Kişisel Verilerin Aktarımı</h2>
+<p>Kişisel verileriniz, KVKK&#8217;nın 8. ve 9. maddeleri uyarınca, yalnızca yasal zorunluluk veya meşru ihtiyaç bulunan hallerde aşağıdaki alıcı gruplarına aktarılabilir:</p>
+<ul>
+<li><strong>Kamu kurum ve kuruluşları</strong> — Maliye Bakanlığı, Gümrük ve Ticaret Bakanlığı, SGK, yargı makamları (yasal yükümlülük)</li>
+<li><strong>Muhasebe ve finans hizmet sağlayıcıları</strong> — Yeminli mali müşavir, SMMM, bankalar (sözleşmenin ifası)</li>
+<li><strong>Lojistik ve kargo firmaları</strong> — Makine teslimatı ve yedek parça sevkiyatı için</li>
+<li><strong>Bilişim altyapı sağlayıcıları</strong> — Sunucu/hosting, e-posta servisi, bulut yedekleme (sözleşmesel gizlilik taahhütleri altında)</li>
+<li><strong>Hukuk müşaviri / avukatlar</strong> — Uyuşmazlık halinde (hakkın tesisi)</li>
+</ul>
+<p>Kişisel verileriniz <strong>yurt dışına aktarılmamaktadır</strong>. Eğer ileride yurt dışı aktarım gerekirse, KVKK&#8217;nın 9. maddesi çerçevesinde gerekli güvenceler (açık rıza veya Kurul tarafından onaylanan mekanizmalar) alınacaktır.</p>
+
+<h2>6. Kişisel Verilerin Toplanma Yöntemi</h2>
+<p>Kişisel verileriniz aşağıdaki kanallar üzerinden toplanır:</p>
+<ul>
+<li>Web sitesi iletişim ve teklif formları</li>
+<li>E-posta, telefon, WhatsApp ve fiziki posta</li>
+<li>Yüz yüze görüşmeler, fuar katılımları, saha ziyaretleri</li>
+<li>İmzalanan sözleşmeler ve siparişler</li>
+<li>Web sitesi çerezleri ve log kayıtları (detaylı bilgi için <a href="sayfa.php?slug=cerez-politikasi">Çerez Politikası</a>)</li>
+</ul>
+
+<h2>7. Kişisel Verilerin Saklama Süresi</h2>
+<p>Kişisel verileriniz, ilgili mevzuatta öngörülen veya işleme amaçlarının gerektirdiği süre kadar saklanır. Örnek saklama süreleri:</p>
+<ul>
+<li><strong>Fatura ve ticari evraklar:</strong> 10 yıl (Türk Ticaret Kanunu ve Vergi Usul Kanunu)</li>
+<li><strong>Sözleşmeler:</strong> Sözleşmenin sona ermesinden itibaren 10 yıl (zamanaşımı süresi)</li>
+<li><strong>İletişim form kayıtları:</strong> 2 yıl</li>
+<li><strong>Web sitesi log kayıtları:</strong> 6 ay (5651 sayılı Kanun)</li>
+<li><strong>Pazarlama iletişim kayıtları:</strong> Rıza geri çekilene kadar</li>
+</ul>
+<p>Saklama süresi sona erdiğinde, kişisel verileriniz Kişisel Verilerin Silinmesi, Yok Edilmesi veya Anonim Hale Getirilmesi Hakkında Yönetmelik çerçevesinde silinir, yok edilir veya anonimleştirilir.</p>
+
+<h2>8. İlgili Kişi Olarak Haklarınız (KVKK Madde 11)</h2>
+<p>KVKK&#8217;nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+<ol>
+<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+<li>İşlenmişse bilgi talep etme</li>
+<li>İşlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme</li>
+<li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+<li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
+<li>Kanunun 7. maddesinde öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme</li>
+<li>Düzeltme veya silme talebinin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+<li>Otomatik sistemlerle analiz sonucu aleyhinize bir sonuç doğmasına itiraz etme</li>
+<li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde tazminat talep etme</li>
+</ol>
+
+<h2>9. Başvuru Yöntemleri</h2>
+<p>Haklarınızı kullanmak için Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca aşağıdaki yöntemlerden biri ile başvurabilirsiniz:</p>
+<ul>
+<li><strong>Yazılı başvuru</strong> — Adresimize iadeli taahhütlü posta ile</li>
+<li><strong>E-posta</strong> — Daha önce sistemimizde kayıtlı e-posta adresinizden: <a href="mailto:info@enamakmakina.com">info@enamakmakina.com</a></li>
+<li><strong>Kayıtlı Elektronik Posta (KEP)</strong> — Varsa KEP adresinize iletilecek</li>
+<li><strong>Güvenli elektronik imza veya mobil imza ile</strong></li>
+<li><strong>Noter</strong> aracılığıyla</li>
+</ul>
+
+<p>Başvurunuzda aşağıdaki bilgilerin bulunması gerekir: ad-soyad, T.C. kimlik numarası (yabancı uyruklu için uyruk, pasaport no), tebligata esas adres, varsa bildirilen e-posta ya da telefon numarası, talep konusu. Talebiniz en geç 30 gün içinde ücretsiz olarak sonuçlandırılır. İşlem gerektiren talepler için Kurulca belirlenen tarifedeki ücret alınabilir.</p>
+
+<h2>10. Değişiklikler</h2>
+<p>İşbu aydınlatma metni, mevzuat değişiklikleri veya iş süreçlerimizdeki güncellemeler nedeniyle zaman zaman revize edilebilir. Güncel metne her zaman bu sayfadan ulaşabilirsiniz.</p>
+
+<div class="legal-foot"><p>Okudum ve anladım.</p></div>',
+ 'KVKK Aydınlatma Metni - Enamak Makina',
+ '6698 sayılı Kanun kapsamında kişisel verilerinizin işlenmesine ilişkin aydınlatma metni. Veri sorumlusu, amaçlar, haklar, başvuru yöntemleri.',
+ 1),
+
+('Gizlilik Politikası', 'gizlilik-politikasi',
+ '<div class="legal-meta"><strong>Site:</strong> enamakmakina.com<br><strong>Son Güncelleme:</strong> 17 Nisan 2026</div>
+
+<p class="lead">Enamak Makina olarak gizliliğinize önem veriyoruz. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde hangi bilgileri topladığımızı, nasıl kullandığımızı ve haklarınızı açıklar. Web sitemizi kullanarak işbu Gizlilik Politikasını okuduğunuzu kabul etmiş olursunuz.</p>
+
+<h2>1. Topladığımız Bilgiler</h2>
+<h3>a) Doğrudan Verdiğiniz Bilgiler</h3>
+<p>Web sitemizde iletişim formu, teklif formu veya e-bülten aboneliği aracılığıyla bize ilettiğiniz bilgiler:</p>
+<ul>
+<li>Ad, soyad, firma bilgisi</li>
+<li>E-posta adresi, telefon numarası</li>
+<li>Proje ve makine talepleriniz (kapasite, parça tipi, bütçe aralığı)</li>
+<li>Mesaj içeriği</li>
+</ul>
+
+<h3>b) Otomatik Toplanan Bilgiler</h3>
+<p>Siteyi ziyaret ettiğinizde, tarayıcınız aracılığıyla bazı teknik bilgiler otomatik olarak toplanır:</p>
+<ul>
+<li>IP adresiniz ve yaklaşık konum bilginiz</li>
+<li>Tarayıcı türü ve sürümü, işletim sistemi</li>
+<li>Ziyaret tarihi, saat ve sayfa gezinme süresi</li>
+<li>Referans URL (sitemize nereden geldiğiniz)</li>
+<li>Çerez ve benzeri teknolojiler üzerinden toplanan veriler (detaylı bilgi için <a href="sayfa.php?slug=cerez-politikasi">Çerez Politikası</a>)</li>
+</ul>
+
+<h2>2. Bilgilerinizi Nasıl Kullanıyoruz?</h2>
+<p>Topladığımız bilgiler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+<ul>
+<li>Talep ettiğiniz hizmeti sağlamak (teklif, bilgi, servis talebi)</li>
+<li>Sözleşme yükümlülüklerimizi yerine getirmek</li>
+<li>Müşteri desteği sunmak ve sorularınızı yanıtlamak</li>
+<li>Web sitemizin performansını analiz etmek ve iyileştirmek</li>
+<li>Güvenlik ve dolandırıcılık önleme</li>
+<li>Yasal yükümlülüklerimizi yerine getirmek</li>
+<li>Açık rızanız halinde, pazarlama iletişimi göndermek</li>
+</ul>
+
+<h2>3. Bilgilerinizi Kimlerle Paylaşıyoruz?</h2>
+<p>Kişisel bilgilerinizi <strong>hiçbir şekilde satmayız, kiralamayız veya pazarlama amaçlı üçüncü taraflara aktarmayız</strong>. Bilgileriniz yalnızca aşağıdaki hallerde paylaşılabilir:</p>
+<ul>
+<li><strong>Yasal zorunluluk</strong> — Mahkeme kararı, kamu kurumları talebi</li>
+<li><strong>Hizmet sağlayıcılarımız</strong> — Sunucu/hosting firması, e-posta servisi, kargo şirketi (her biri gizlilik sözleşmesi altında)</li>
+<li><strong>Profesyonel danışmanlarımız</strong> — Avukat, mali müşavir, denetçi</li>
+<li><strong>İş ortaklarımız</strong> — Satış sonrası servis ağı, yedek parça tedarikçileri (yalnızca sözleşme kapsamında gerekli bilgiler)</li>
+</ul>
+
+<h2>4. Veri Güvenliği</h2>
+<p>Bilgilerinizin güvenliği için aşağıdaki teknik ve idari tedbirleri uygularız:</p>
+<ul>
+<li>SSL/TLS şifreli bağlantı (tüm form gönderimleri)</li>
+<li>Güçlü şifreleme ile veritabanı koruması</li>
+<li>Düzenli sunucu güvenlik güncellemeleri</li>
+<li>Yetkisiz erişime karşı rol tabanlı erişim kontrolü</li>
+<li>Çalışanlarımızın gizlilik sözleşmesi ve eğitimleri</li>
+<li>Düzenli yedekleme ve felaket kurtarma planları</li>
+</ul>
+<p>Ancak internet üzerinden veri aktarımının %100 güvenli olduğu hiçbir yöntem bulunmamaktadır. Gerekli önlemleri almamıza rağmen, mutlak güvenlik garanti edilemez.</p>
+
+<h2>5. Veri Saklama Süreleri</h2>
+<ul>
+<li>İletişim formu mesajları: 2 yıl</li>
+<li>Teklif/sipariş kayıtları: 10 yıl (yasal zorunluluk)</li>
+<li>Web sitesi log kayıtları: 6 ay (5651 sayılı Kanun)</li>
+<li>Pazarlama kayıtları: Rıza geri çekilene kadar</li>
+</ul>
+<p>Saklama süresi sonunda veriler güvenli bir şekilde silinir veya anonimleştirilir.</p>
+
+<h2>6. Çerezler</h2>
+<p>Web sitemizde zorunlu ve isteğe bağlı çerezler kullanılmaktadır. Çerezlerin türleri, amaçları ve nasıl yöneteceğiniz hakkında detaylı bilgi için <a href="sayfa.php?slug=cerez-politikasi">Çerez Politikası</a> sayfamızı inceleyin.</p>
+
+<h2>7. Üçüncü Taraf Bağlantıları</h2>
+<p>Web sitemiz, üçüncü taraf sitelere (sosyal medya, harita servisleri, teknik belge paylaşım platformları) bağlantılar içerebilir. Bu sitelerin gizlilik uygulamalarından Enamak Makina sorumlu değildir. İlgili sitelerin kendi gizlilik politikalarını incelemenizi öneririz.</p>
+
+<h2>8. Çocukların Gizliliği</h2>
+<p>Enamak Makina ürün ve hizmetleri endüstriyel müşterilere yöneliktir. Web sitemiz 18 yaşın altındaki bireylerden bilerek kişisel bilgi toplamaz. 18 yaşın altındaysanız, bilgilerinizi göndermeyin.</p>
+
+<h2>9. Haklarınız</h2>
+<p>6698 sayılı KVKK kapsamında sahip olduğunuz haklar ve başvuru yöntemleri için <a href="sayfa.php?slug=kvkk">KVKK Aydınlatma Metni</a> sayfamızı inceleyin.</p>
+
+<h2>10. Politika Değişiklikleri</h2>
+<p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda, web sitemizin ana sayfasında veya e-posta yoluyla (varsa) duyurulur. Sayfayı düzenli olarak kontrol etmenizi öneririz.</p>
+
+<h2>11. İletişim</h2>
+<p>Gizlilik politikamız hakkında sorularınız için:</p>
+<ul>
+<li>E-posta: <a href="mailto:info@enamakmakina.com">info@enamakmakina.com</a></li>
+<li>Telefon: +90 542 510 36 16</li>
+<li>Adres: Organize Sanayi Bölgesi, Konya / Türkiye</li>
+</ul>',
+ 'Gizlilik Politikası - Enamak Makina',
+ 'Enamak Makina web sitesi gizlilik politikası. Hangi bilgileri topluyoruz, nasıl kullanıyoruz, veri güvenliği ve haklarınız.',
+ 1),
+
+('Çerez Politikası', 'cerez-politikasi',
+ '<div class="legal-meta"><strong>Site:</strong> enamakmakina.com<br><strong>Son Güncelleme:</strong> 17 Nisan 2026</div>
+
+<p class="lead">Enamak Makina olarak web sitemizi ziyaret eden kullanıcılarımızın deneyimini iyileştirmek ve hizmetlerimizi daha verimli sunabilmek için çerezlerden faydalanıyoruz. Bu politika, kullandığımız çerez türlerini, amaçlarını ve bunları nasıl kontrol edebileceğinizi açıklar.</p>
+
+<h2>1. Çerez (Cookie) Nedir?</h2>
+<p>Çerezler, ziyaret ettiğiniz web sitelerinin tarayıcınız aracılığıyla bilgisayarınıza, tabletinize veya telefonunuza depoladığı küçük metin dosyalarıdır. Bir sonraki ziyaretinizde tercihlerinizi hatırlamak, oturum açık tutmak, site kullanımını analiz etmek gibi amaçlarla kullanılırlar.</p>
+
+<h2>2. Çerez Türleri</h2>
+
+<h3>a) Sürelerine Göre</h3>
+<ul>
+<li><strong>Oturum Çerezleri (Session)</strong> — Tarayıcınızı kapattığınızda otomatik olarak silinir.</li>
+<li><strong>Kalıcı Çerezler (Persistent)</strong> — Belirli bir süre (örn. 30 gün, 1 yıl) cihazınızda kalır.</li>
+</ul>
+
+<h3>b) Kaynaklarına Göre</h3>
+<ul>
+<li><strong>Birinci Taraf Çerezler</strong> — Doğrudan enamakmakina.com tarafından yerleştirilir.</li>
+<li><strong>Üçüncü Taraf Çerezler</strong> — Google Analytics, sosyal medya eklentileri gibi harici servislerce yerleştirilir.</li>
+</ul>
+
+<h3>c) Kullanım Amaçlarına Göre</h3>
+
+<h4>🟢 Zorunlu Çerezler</h4>
+<p>Sitenin temel işlevleri için gereklidir. Bu çerezler olmadan site düzgün çalışmaz. Onay gerekmez.</p>
+<ul>
+<li>Oturum yönetimi (giriş yapmak, form tamamlamak)</li>
+<li>Güvenlik çerezleri (CSRF tokenları)</li>
+<li>Yük dengeleme</li>
+</ul>
+
+<h4>🔵 İşlevsel Çerezler</h4>
+<p>Tercihlerinizi hatırlayarak gelişmiş bir deneyim sunar. Açık rıza ile etkinleştirilir.</p>
+<ul>
+<li>Dil seçimi</li>
+<li>Bölge/para birimi tercihi</li>
+<li>Görünüm ayarları (koyu mod vb.)</li>
+</ul>
+
+<h4>🟡 Performans / Analiz Çerezleri</h4>
+<p>Site kullanımını istatistiki olarak analiz etmemizi sağlar. Kimlik belirleyici bilgi içermez veya anonimleştirilir.</p>
+<ul>
+<li>Hangi sayfalar daha çok ziyaret ediliyor</li>
+<li>Ziyaretçilerin geldiği kaynak (arama, sosyal medya)</li>
+<li>Ortalama oturum süresi</li>
+<li>Hata ve performans ölçümleri</li>
+</ul>
+
+<h4>🔴 Pazarlama / Reklam Çerezleri</h4>
+<p>İlgi alanlarınıza göre reklam göstermek veya sosyal medya paylaşım fonksiyonları için kullanılır. Sadece açık rızanız ile etkinleştirilir.</p>
+<ul>
+<li>Hedefli reklam gösterimi</li>
+<li>Sosyal medya entegrasyonları</li>
+<li>Kampanya performans ölçümü</li>
+</ul>
+
+<h2>3. Sitemizde Kullanılan Çerezler</h2>
+<table class="legal-table"><thead><tr><th>Çerez</th><th>Tür</th><th>Amaç</th><th>Süre</th></tr></thead>
+<tbody>
+<tr><td>PHPSESSID</td><td>Zorunlu</td><td>Oturum yönetimi</td><td>Oturum</td></tr>
+<tr><td>csrf_token</td><td>Zorunlu</td><td>Güvenlik (form koruması)</td><td>Oturum</td></tr>
+<tr><td>tema_tercihi</td><td>İşlevsel</td><td>Koyu/açık tema</td><td>1 yıl</td></tr>
+<tr><td>cerez_onayi</td><td>Zorunlu</td><td>Çerez tercihlerinizin hatırlanması</td><td>1 yıl</td></tr>
+<tr><td>_ga, _gid</td><td>Performans</td><td>Google Analytics ziyaretçi ölçümü</td><td>2 yıl / 24 saat</td></tr>
+<tr><td>_fbp</td><td>Pazarlama</td><td>Facebook Pixel (aktifse)</td><td>3 ay</td></tr>
+</tbody></table>
+<p><em>Not: Yukarıdaki liste güncel durumu yansıtır; site altyapısı değiştikçe güncellenir.</em></p>
+
+<h2>4. Üçüncü Taraf Servisler</h2>
+<p>Sitemiz, aşağıdaki üçüncü taraf servisleri kullanabilir. Her birinin kendi gizlilik politikası vardır:</p>
+<ul>
+<li><strong>Google Analytics</strong> — Ziyaretçi istatistikleri (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>)</li>
+<li><strong>Google Fonts</strong> — Yazı tipi yüklemesi</li>
+<li><strong>Google Maps</strong> — İletişim sayfasındaki harita</li>
+<li><strong>WhatsApp Business</strong> — WhatsApp iletişim butonu</li>
+<li><strong>Sosyal medya eklentileri</strong> — Facebook, Instagram, LinkedIn, YouTube</li>
+</ul>
+
+<h2>5. Çerezleri Nasıl Yönetirsiniz?</h2>
+
+<h3>Tarayıcı Ayarları Üzerinden</h3>
+<p>Tüm modern tarayıcılar, çerezleri görüntüleme, silme ve engelleme olanağı sunar:</p>
+<ul>
+<li><strong>Google Chrome:</strong> Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri</li>
+<li><strong>Mozilla Firefox:</strong> Seçenekler → Gizlilik ve Güvenlik → Çerezler ve Site Verileri</li>
+<li><strong>Safari:</strong> Tercihler → Gizlilik → Çerezler ve site verileri</li>
+<li><strong>Microsoft Edge:</strong> Ayarlar → Çerezler ve site izinleri</li>
+<li><strong>Opera:</strong> Ayarlar → Gelişmiş → Gizlilik ve güvenlik → Site ayarları → Çerezler</li>
+</ul>
+
+<h3>Mobil Cihazlarda</h3>
+<ul>
+<li><strong>iOS Safari:</strong> Ayarlar → Safari → Gizlilik ve Güvenlik</li>
+<li><strong>Android Chrome:</strong> Ayarlar → Site ayarları → Çerezler</li>
+</ul>
+
+<h3>Önemli Uyarı</h3>
+<p>Zorunlu çerezleri devre dışı bırakmanız halinde, sitenin bazı bölümleri düzgün çalışmayabilir (örneğin form gönderimi, oturum açma). Analiz ve pazarlama çerezlerini reddetmeniz ise site işlevselliğini etkilemez.</p>
+
+<h2>6. Açık Rıza ve Tercih Yönetimi</h2>
+<p>Zorunlu çerezler dışındaki tüm çerezler için, siteye ilk girişinizde gösterilen çerez bildirim banner&#8217;ı üzerinden açık rızanız alınır. Tercihlerinizi istediğiniz zaman değiştirebilirsiniz.</p>
+
+<h2>7. Haklarınız</h2>
+<p>6698 sayılı KVKK kapsamında çerez yoluyla işlenen kişisel verilerinize ilişkin hakları ve başvuru yöntemlerini <a href="sayfa.php?slug=kvkk">KVKK Aydınlatma Metni</a> sayfamızda bulabilirsiniz.</p>
+
+<h2>8. Politika Değişiklikleri</h2>
+<p>Bu Çerez Politikası, yasal düzenlemeler veya site altyapısındaki değişiklikler nedeniyle güncellenebilir. Güncel metni her zaman bu sayfadan görebilirsiniz.</p>
+
+<h2>9. İletişim</h2>
+<p>Çerez politikamız hakkında sorularınız için:</p>
+<ul>
+<li>E-posta: <a href="mailto:info@enamakmakina.com">info@enamakmakina.com</a></li>
+<li>Telefon: +90 542 510 36 16</li>
+</ul>',
+ 'Çerez Politikası - Enamak Makina',
+ 'Web sitemizdeki çerezler, türleri (zorunlu, işlevsel, analiz, pazarlama), amaçları ve nasıl yöneteceğiniz hakkında bilgi.',
+ 1);
