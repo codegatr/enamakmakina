@@ -1,7 +1,7 @@
 {
-    "version": "1.4.1",
+    "version": "1.4.2",
     "date": "2026-04-17",
-    "notes": "v1.4.1 Gorsel icerik guncellemeleri - 2 profesyonel ChatGPT uretmen slider gorseli eklendi (7/24 Servis + Projeye Ozel Muhendislik). Slider icin yeni 'sadece_gorsel' modu: gorseldeki metin+buton kompozisyonu bozulmasin diye CSS overlay kaldiriliyor, tamami clickable banner oluyor. Hakkimizda sayfasina 'Sistem Bilesenleri' infografik banner eklendi (Enduustriyel Kumlama Sistemleri). ALTER TABLE slider.sadece_gorsel, UPDATE kayitlari, 3 yeni gorsel dosyasi (toplam ~900KB optimize jpg progressive).",
+    "notes": "v1.4.2 Migration idempotent iyilestirme - 'zaten yapilmis' hatalari (1060 duplicate column, 1050 table exists, 1061 duplicate key, 1062 duplicate entry) artik 'hata' degil 'atlandi' olarak gosteriliyor. Guncelleme loglari 'X basarili, Y atlandi, Z hatali' formatinda. Kurulum.sql slider tablosuna ust_baslik + sadece_gorsel kolonlari eklendi (yeni kurulumlar icin).",
     "files": [
         ".htaccess",
         "404.php",

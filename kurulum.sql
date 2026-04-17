@@ -44,12 +44,14 @@ CREATE TABLE IF NOT EXISTS `yoneticiler` (
 -- =====================================================
 CREATE TABLE IF NOT EXISTS `slider` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `ust_baslik` VARCHAR(200) DEFAULT NULL,
   `baslik` VARCHAR(200) DEFAULT NULL,
   `alt_baslik` VARCHAR(300) DEFAULT NULL,
   `aciklama` TEXT DEFAULT NULL,
   `gorsel` VARCHAR(255) DEFAULT NULL,
   `buton_metin` VARCHAR(100) DEFAULT NULL,
   `buton_link` VARCHAR(255) DEFAULT NULL,
+  `sadece_gorsel` TINYINT(1) DEFAULT 0,
   `sira` INT(11) DEFAULT 0,
   `aktif` TINYINT(1) DEFAULT 1,
   `olusturma_tarihi` DATETIME DEFAULT CURRENT_TIMESTAMP,

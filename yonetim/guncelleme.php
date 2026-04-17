@@ -169,7 +169,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['islem'] ?? '') === 'guncel
                         }
                         // ; ile statement'lere bol (string icindeki ; degil, satir sonundaki)
                         $statements = preg_split('/;\s*\n/', $sql_clean);
-                        $ok = 0; $fail = 0;
+                        $ok = 0; $fail = 0; $skipped = 0;
+                        // Idempotent migrasyon: bu MySQL hata kodlari "zaten yapilmis" anlaminda
+                        // ve gercek hata olarak sayilmaz
+                        $benign_codes = [
+                            '42S21', // 1060 Duplicate column
+                            '42S01', // 1050 Table already exists
+                            '23000', // 1062 Duplicate entry / 1022 Duplicate key
+                            '42000', // 1061 Duplicate key name
+                        ];
+                        $benign_messages = ['duplicate column', 'already exists', 'duplicate key name', 'duplicate entry'];
                         foreach ($statements as $stmt) {
                             $stmt = trim($stmt, " \n\r\t;");
                             if ($stmt === '') continue;
@@ -177,11 +186,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['islem'] ?? '') === 'guncel
                                 $pdo->exec($stmt);
                                 $ok++;
                             } catch (Exception $e) {
-                                $fail++;
-                                $log_ekle('  Statement hatasi: ' . substr($e->getMessage(), 0, 150));
+                                $msg = $e->getMessage();
+                                $is_benign = false;
+                                foreach ($benign_codes as $code) {
+                                    if (strpos($msg, $code) !== false) { $is_benign = true; break; }
+                                }
+                                if (!$is_benign) {
+                                    $msg_lower = strtolower($msg);
+                                    foreach ($benign_messages as $bm) {
+                                        if (strpos($msg_lower, $bm) !== false) { $is_benign = true; break; }
+                                    }
+                                }
+                                if ($is_benign) {
+                                    $skipped++;
+                                    $log_ekle('  ℹ Atlandi (zaten yapilmis): ' . substr($msg, 0, 120));
+                                } else {
+                                    $fail++;
+                                    $log_ekle('  ✗ Statement hatasi: ' . substr($msg, 0, 150));
+                                }
                             }
                         }
-                        $log_ekle('Migration: ' . basename($mig) . ' - ' . $ok . ' basarili, ' . $fail . ' hatali');
+                        $summary = 'Migration: ' . basename($mig) . ' - ' . $ok . ' basarili';
+                        if ($skipped > 0) $summary .= ', ' . $skipped . ' atlandi';
+                        if ($fail > 0) $summary .= ', ' . $fail . ' hatali';
+                        $log_ekle($summary);
                     }
                 }
 
